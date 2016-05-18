@@ -1,12 +1,15 @@
 package it.uniroma3.clinic;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -22,8 +25,8 @@ public class Medico {
 	private String cognome;
 	@Column(nullable = false)
 	private String specializzazione;
-//	@OneToMany
-//	private List<Esame> esami;
+	@OneToMany
+	private List<Esame> esami;
 	public Long getId() {
 		return id;
 	}

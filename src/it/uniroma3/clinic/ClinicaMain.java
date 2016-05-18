@@ -1,8 +1,6 @@
 package it.uniroma3.clinic;
 
 
-import java.util.Date;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 

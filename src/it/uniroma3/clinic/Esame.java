@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -30,13 +29,14 @@ public class Esame {
 	@OneToOne
 	@JoinColumn(name = "tipologia")
 	private TipologiaEsame tipologia;
-	@OneToMany(name="risultati_esame")
+	@OneToMany
+	@JoinColumn(name ="risultati_esame")
 	private Map<String,Risultato> risultati = new HashMap<>();
 	@OneToOne
-	@JoinColumn("paziente")
+	@JoinColumn(name="paziente")
 	private Paziente paziente;
 	@OneToOne
-	@JoinColumn("medico")
+	@JoinColumn(name="medico")
 	private Medico medico;
 
 	public Long getId() {
@@ -76,12 +76,6 @@ public class Esame {
 		this.tipologia = tipologia;
 	}
 	
-	public Map<String,String> getRisultati() {
-		return risultati;
-	}
-	public void setRisultati(Map<String,String> risultati) {
-		this.risultati = risultati;
-	}
 	public Esame(Date dataPrenotazione, Date dataSvolgimento,TipologiaEsame tipologia,Paziente paziente, Medico medico) {
 		this.dataPrenotazione = dataPrenotazione;
 		this.dataSvolgimento = dataSvolgimento;

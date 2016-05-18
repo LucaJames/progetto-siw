@@ -1,15 +1,19 @@
 package it.uniroma3.clinic;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
+@Entity
+@NamedQuery(name="findAllTipologies", query = "SELECT t FROM TipologiaEsame t")
 public class TipologiaEsame {
 	
 	@Id
@@ -17,10 +21,13 @@ public class TipologiaEsame {
 	private Long id;
 	@Column(nullable = false)
 	private String nome;
+	@Column(nullable = false)
 	private String descrizione;
-	private Float price;
-	private Map<String,String> prerequisiti = new HashMap<>();
-	private List<String> risultatiTipologia = new LinkedList<>();
+	@Column(nullable = false)
+	private double price;
+	@OneToMany
+	@JoinColumn(name = "prequerisiti_tipologia")
+	private List<Prerequisito> prerequisiti;
 	
 	public Long getId() {
 		return id;
@@ -46,43 +53,18 @@ public class TipologiaEsame {
 		this.descrizione = descrizione;
 	}
 	
-	public Float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	
-	public void setPrice(Float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	
-	public Map<String, String> getPrerequisiti() {
-		return prerequisiti;
-	}
-	
-	public void setPrerequisiti(Map<String, String> prerequisiti) {
-		this.prerequisiti = prerequisiti;
-	}
-	
-	public TipologiaEsame(Long id, String nome, String descrizione,
-			Float price, Map<String, String> prerequisiti, List<String> risultatiTipologia) {
-		super();
-		this.id = id;
+
+	public TipologiaEsame(String nome, String descrizione, double price) {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.price = price;
-		this.prerequisiti = prerequisiti;
-		this.risultatiTipologia = risultatiTipologia;
 	}
-
-	public List<String> getRisultatiTipologia() {
-		return risultatiTipologia;
-	}
-
-	public void setRisultatiTipologia(List<String> risultatiTipologia) {
-		this.risultatiTipologia = risultatiTipologia;
-	}
-	
-	
-	
-	
-
 }
