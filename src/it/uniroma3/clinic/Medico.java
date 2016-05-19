@@ -1,13 +1,16 @@
 package it.uniroma3.clinic;
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
@@ -25,14 +28,11 @@ public class Medico {
 	private String cognome;
 	@Column(nullable = false)
 	private String specializzazione;
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="medico_id")
 	private List<Esame> esami;
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
+
 	public String getNome() {
 		return nome;
 	}
@@ -51,17 +51,24 @@ public class Medico {
 	public void setSpecializzazione(String specializzazione) {
 		this.specializzazione = specializzazione;
 	}
-//	public List<Esame> getEsami() {
-//		return esami;
-//	}
-//	public void setEsami(List<Esame> esami) {
-//		this.esami = esami;
-//	}
+	
+	public List<Esame> getEsami() {
+		return esami;
+	}
+	
+	public void setEsami(List<Esame> esami) {
+		this.esami = esami;
+	}
 	
 	public Medico(String nome,String cognome,String specializzazione){
 		this.nome = nome;
 		this.cognome = cognome;
 		this.specializzazione = specializzazione;
+		this.esami = new LinkedList<Esame>();
+	}
+	
+	public void addEsame(Esame e){
+		this.esami.add(e);
 	}
 	
 	

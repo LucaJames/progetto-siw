@@ -1,6 +1,8 @@
 package it.uniroma3.clinic;
 
+import java.util.LinkedList;
 import java.util.List;
+
 
 
 import javax.persistence.Column;
@@ -28,6 +30,8 @@ public class TipologiaEsame {
 	@OneToMany
 	@JoinColumn(name = "prequerisiti_tipologia")
 	private List<Prerequisito> prerequisiti;
+	@OneToMany
+	private List<Risultato> risultati;
 	
 	public Long getId() {
 		return id;
@@ -66,5 +70,6 @@ public class TipologiaEsame {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.price = price;
+		this.risultati = new LinkedList<Risultato>();
 	}
 }
