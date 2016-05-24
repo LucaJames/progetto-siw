@@ -2,15 +2,14 @@ package it.uniroma3.clinic;
 
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
@@ -30,8 +29,7 @@ public class Paziente {
 	private String id;
 	@Column(nullable = false)
 	private String password;
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "paziente_id")
+	@OneToMany(mappedBy = "paziente")
 	private List<Esame> esami;
 
 	public String getNome() {
@@ -63,6 +61,7 @@ public class Paziente {
 		this.cognome = cognome;
 		this.id = id;
 		this.password = password;
+		this.esami = new LinkedList<>();
 	}
 	
 	public void addEsame(Esame e){

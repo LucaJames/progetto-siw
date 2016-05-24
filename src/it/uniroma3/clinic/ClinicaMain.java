@@ -9,6 +9,8 @@ public class ClinicaMain {
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exams-unit");
 		
+		
+		
 		emf.close();
 	}
 }

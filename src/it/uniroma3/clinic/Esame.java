@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,11 +27,11 @@ public class Esame {
 	private Date dataPrenotazione;
 	@Column(nullable = false)
 	private Date dataSvolgimento;
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	@JoinColumn(name = "tipologia")
 	private TipologiaEsame tipologia;
 	@OneToMany
-	@JoinColumn(name ="risultati_esame")
+	@JoinColumn(name = "risultati_esame")
 	private Map<String,Risultato> risultati = new HashMap<>();
 	@ManyToOne
 	private Paziente paziente;

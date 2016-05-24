@@ -34,7 +34,7 @@ public class EsameDao extends Dao<Esame>{
 		@SuppressWarnings("unchecked")
 		List<Esame> result = em.createNamedQuery("Esame.findAll").getResultList();
 		em.close();
-		return result;			
+		return result;
 	}
 	
 

@@ -31,6 +31,7 @@ public class TipologiaEsame {
 	@JoinColumn(name = "prequerisiti_tipologia")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
+	@JoinColumn(name = "risultati_tipologia")
 	private List<Risultato> risultati;
 	
 	public Long getId() {
