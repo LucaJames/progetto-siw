@@ -56,19 +56,7 @@
 				</form>
 			</div>
 			<div class="col-sm-4">
-				<h3>Login Amministratore</h3>
-				<form action="<c:url value="/controller/amministratore.verifica" />" method='post'>
-					<div class="row">
-						<p class="col-sm-3">${idError} <label>Id:</label></p>
-						<input class="col-sm-6" type="text" name="id" value='${param["id"]}' 
-							placeholder="inserisci id" />
-					</div>
-					<div class="row"><p class="col-sm-3"> ${pswError} <label>Password: </label></p>
-						<input class="col-sm-6" type="password" name="password" placeholder="inserisci password">
-					</div>
-					<div>${autenticazioneError}</div>
-					<div><input type="submit" name="submit" value="invia" /></div>
-				</form>
+				<h3><a href="<c:url value="loginAmministratore.jsp"/>">Accedi come amministratore</a></h3>
 			</div>
 		</div>
 	</div>

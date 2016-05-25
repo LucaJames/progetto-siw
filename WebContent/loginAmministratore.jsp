@@ -10,10 +10,12 @@
 	<h3> Login Amministratore </h3>
 	<h4> inserire codice e password dell'amministratore </h4>
 	<form action='/controller/amministratore.verifica' method='post'>
-		<div>${idError} Codice: <input type='text' name='codice' value='${param["codice"]}' /></div>
-		<div>${pswError} Password: <input type="password" name='password' /></div>
+		<div>${idError} Id: <input type='text' name='id' value='${param["codice"]}' 
+			placeholder="inserisci id"></div>
+		<div>${pswError} Password: <input type="password" name='password' 
+			placeholder="password"></div>
 		<div>${autenticazioneError}</div>
-		<div><input type="submit" name="sumbit" value="invia"/></div>
+		<div><input type="submit" name="submit" value="invia"></div>
 	</form>
 </body>
 </html>
