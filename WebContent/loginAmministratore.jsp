@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3> Login Amministratore </h3>
+	<h2> Login Amministratore </h2>
 	<h4> inserire codice e password dell'amministratore </h4>
-	<form action='/controller/amministratore.verifica' method='post'>
+	<form action='<c:url value="/controller/amministratore.verifica" />' method='post'>
 		<div>${idError} Id: <input type='text' name='id' value='${param["codice"]}' 
 			placeholder="inserisci id"></div>
 		<div>${pswError} Password: <input type="password" name='password' 
