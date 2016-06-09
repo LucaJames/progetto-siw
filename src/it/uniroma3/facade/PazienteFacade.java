@@ -33,6 +33,8 @@ public class PazienteFacade {
 		return pazienti;
 	}
 	
+	
+	
 	public void updatePaziente(Paziente paziente){
 		em.merge(paziente);
 	}
