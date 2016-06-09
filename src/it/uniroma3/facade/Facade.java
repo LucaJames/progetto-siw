@@ -1,4 +1,4 @@
-package facade;
+package it.uniroma3.facade;
 
 public interface Facade {
 	// TODO Facade interface
