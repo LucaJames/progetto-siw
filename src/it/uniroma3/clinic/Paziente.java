@@ -64,6 +64,7 @@ public class Paziente {
 		this.esami = new LinkedList<>();
 	}
 	
+	
 	public void addEsame(Esame e){
 		this.esami.add(e);
 	}

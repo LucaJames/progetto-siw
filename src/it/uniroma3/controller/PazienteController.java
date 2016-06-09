@@ -18,6 +18,7 @@ public class PazienteController {
 	private String password;
 	private String nome;
 	private String cognome;
+	private List<Esame> esami;
 	private Paziente paziente;
 	private List<Paziente> pazienti;
 	
@@ -38,6 +39,11 @@ public class PazienteController {
 		this.paziente = pazienteFacade.getPaziente(id);
 		return "paziente";
 	}
+	
+	public String findEsamiPazienteByID(){
+		this.esami = pazienteFacade.getEsamiPaziente(id);
+		return "esami";
+	}	
 
 	public Long getId() {
 		return id;
@@ -95,12 +101,15 @@ public class PazienteController {
 		this.pazienti = pazienti;
 	}
 
-	public PazienteFacade getPazienteFacade() {
-		return pazienteFacade;
+	public List<Esame> getEsami() {
+		return esami;
 	}
 
-	public void setPazienteFacade(PazienteFacade pazienteFacade) {
-		this.pazienteFacade = pazienteFacade;
+	public void setEsami(List<Esame> esami) {
+		this.esami = esami;
 	}
+
+	
+	
 	
 }
