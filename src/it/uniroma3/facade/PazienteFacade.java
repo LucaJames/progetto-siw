@@ -11,7 +11,6 @@ import it.uniroma3.clinic.Paziente;
 
 @Stateless
 public class PazienteFacade {
-	// TODO PazienteFacade
 	
 	@PersistenceContext(unitName = "exams-unit")
     private EntityManager em;
