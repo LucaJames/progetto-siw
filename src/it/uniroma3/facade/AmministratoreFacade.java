@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.clinic.Amministratore;
-import it.uniroma3.clinic.Paziente;
 
 @Stateless
 public class AmministratoreFacade {

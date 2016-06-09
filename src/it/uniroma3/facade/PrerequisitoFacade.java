@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.clinic.Prerequisito;
 
-import javax.persistence.EntityManager;
 
 @Stateless
 public class PrerequisitoFacade {
