@@ -9,7 +9,7 @@ public class VerificaPaziente implements Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO 
+		// TODO perform VerificaPaziente
 		HelperVerificaUtente helper = new HelperVerificaUtente();
 		
 		if(helper.isValid(request)){

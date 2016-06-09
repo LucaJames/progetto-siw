@@ -6,7 +6,7 @@ public class GetEsame implements Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO
+		// TODO perform GetEsame
 		return null;
 	}
 

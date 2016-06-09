@@ -13,10 +13,19 @@ public class Prerequisito {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	@Column(nullable = false)
 	private String descrizione;
 	
 	public Prerequisito(String descrizione){
+		this.descrizione = descrizione;
+	}
+	
+	public String getDescrizione() {
+		return descrizione;
+	}
+	
+	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 

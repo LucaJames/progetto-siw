@@ -20,13 +20,13 @@ public class Paziente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long codice;
+	private Long id;
 	@Column(nullable = false)
 	private String nome;
 	@Column(nullable = false)
 	private String cognome;
 	@Column(nullable = false)
-	private String id;
+	private String userName;
 	@Column(nullable = false)
 	private String password;
 	@OneToMany(mappedBy = "paziente")
@@ -56,10 +56,10 @@ public class Paziente {
 		this.esami = esami;
 	}
 
-	public Paziente(String id, String password, String nome, String cognome){
+	public Paziente(String userName, String password, String nome, String cognome){
 		this.nome = nome;
 		this.cognome = cognome;
-		this.id = id;
+		this.userName = userName;
 		this.password = password;
 		this.esami = new LinkedList<>();
 	}

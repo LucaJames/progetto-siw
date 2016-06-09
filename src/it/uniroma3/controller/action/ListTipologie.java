@@ -6,7 +6,7 @@ public class ListTipologie implements Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO 
+		// TODO perform ListTipologie 
 		return "/tipologie.jsp";
 	}
 

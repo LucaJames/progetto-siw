@@ -9,8 +9,8 @@ public class VerificaAmministratore implements Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO
-		HelperVerificaUtente helper = new HelperVerificaUtente();
+		// TODO perform VerificaAmministratore
+  		HelperVerificaUtente helper = new HelperVerificaUtente();
 
 		if(helper.isValid(request)){
 			String id = request.getParameter("id");

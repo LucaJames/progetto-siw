@@ -13,38 +13,30 @@ public class Amministratore {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long codice;
+	private Long id;
 	@Column(nullable=false)
 	private String nome;
 	@Column(nullable=false)
 	private String cognome;
 	@Column(nullable=false)
-	private String id;
+	private String userName;
 	@Column(nullable=false)
 	private String password;
 	
 	
-	public Amministratore(String id, String nome, String cognome, String password) {
-		this.id = id;
+	public Amministratore(String userName, String nome, String cognome, String password) {
+		this.userName = userName;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.password = password;
 	}
 	
-	public Long getCodice() {
-		return codice;
+	public String getUserName() {
+		return userName;
 	}
 	
-	public void setCodice(Long codice) {
-		this.codice = codice;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	public String getNome() {

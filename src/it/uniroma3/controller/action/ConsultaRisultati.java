@@ -6,7 +6,7 @@ public class ConsultaRisultati implements Action{
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		// TODO 
+		// TODO perform ConsultaRisultati
 		return null;
 	}
 

@@ -20,7 +20,7 @@ public class HelperVerificaUtente {
 			isValid = false;
 		}
 		
-		// TODO 
+		// TODO HelperVerificaUtente 
 		/* verifico la combinazione utente-password... come si accede al database?
 		 * 
 		 * conviene una superclasse utente (amministratore e paziente come sottoclassi)

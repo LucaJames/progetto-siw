@@ -38,12 +38,7 @@ public class Esame {
 	@ManyToOne
 	private Medico medico;
 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public Date getDataPrenotazione() {
 		return dataPrenotazione;
 	}
