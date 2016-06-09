@@ -70,12 +70,13 @@ public class Esame {
 		this.tipologia = tipologia;
 	}
 	
-	public Esame(Date dataPrenotazione, Date dataSvolgimento,TipologiaEsame tipologia,Paziente paziente, Medico medico) {
+	public Esame(Date dataPrenotazione, Date dataSvolgimento,TipologiaEsame tipologia,Paziente paziente, Medico medico, Map<String,Risultato> risultati) {
 		this.dataPrenotazione = dataPrenotazione;
 		this.dataSvolgimento = dataSvolgimento;
 		this.tipologia = tipologia;
 		this.paziente = paziente;
 		this.medico = medico;
+		this.risultati = risultati;
 	}
 	
 	
