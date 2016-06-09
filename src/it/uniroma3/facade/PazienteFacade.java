@@ -5,8 +5,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
+import it.uniroma3.clinic.Esame;
 import it.uniroma3.clinic.Paziente;
 
 @Stateless
@@ -31,6 +33,14 @@ public class PazienteFacade {
         cq.select(cq.from(Paziente.class));
         List<Paziente> pazienti = em.createQuery(cq).getResultList();
 		return pazienti;
+	}
+	
+	public List<Esame> getEsamiPaziente(Long id){
+		String p = id.toString();
+		TypedQuery<Esame> q = em.createQuery("SELECT * FROM Esame e WHERE e.paziente = ?", Esame.class);
+		q.setParameter(1, p);
+		List<Esame> esamiPaziente = q.getResultList();
+		return esamiPaziente;
 	}
 	
 	public void updatePaziente(Paziente paziente){
