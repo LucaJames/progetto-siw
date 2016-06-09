@@ -15,7 +15,7 @@ public class PazienteFacade {
 	@PersistenceContext(unitName = "exams-unit")
     private EntityManager em;
 	
-	public Paziente create(String nome, String cognome, String user, String psw){
+	public Paziente createPaziente(String nome, String cognome, String user, String psw){
 		Paziente p = new Paziente(user, psw, nome, cognome);
 		em.persist(p);
 		return p;
