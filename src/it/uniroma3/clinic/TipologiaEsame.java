@@ -73,4 +73,8 @@ public class TipologiaEsame {
 		this.price = price;
 		this.risultati = new LinkedList<Risultato>();
 	}
+	
+	public void addPrerequisito(Prerequisito p){
+		this.prerequisiti.add(p);
+	}
 }

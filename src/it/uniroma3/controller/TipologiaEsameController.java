@@ -21,24 +21,24 @@ public class TipologiaEsameController {
 	private List<Prerequisito> prerequisiti;
 	private TipologiaEsame tipologia;
 	private List<TipologiaEsame> tipologie;
-	
+
 	@EJB
 	private TipologiaEsameFacade tipologiaEsameFacade;
 
 	public String createTipologiaEsame(){
-		this.tipologia = tipologiaEsameFacade.createTipologiaEsame(nome, descrizione, price)
+		this.tipologia = tipologiaEsameFacade.createTipologiaEsame(nome, descrizione, price);
 		return "prerequisito";
 	}
-	
 
-	public String listPrerequisiti(){
-		this.prerequisiti = tipologiaEsameFacade.getAllPrerequisiti();
-		return "prerequisiti";
+
+	public String listTipologiaEsame(){
+		this.tipologie = tipologiaEsameFacade.getAllTipologieEsami();
+		return "tipologie";
 	}
 
 	public String findPrerequisito(){
-		this.prerequisito = tipologiaEsameFacade.getPrerequisito(id);
-		return "prerequisito";
+		this.tipologia = tipologiaEsameFacade.getTipologiaEsame(id);
+		return "tipologia";
 	}
 
 
@@ -52,6 +52,16 @@ public class TipologiaEsameController {
 	}
 
 
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
 	public String getDescrizione() {
 		return descrizione;
 	}
@@ -62,13 +72,23 @@ public class TipologiaEsameController {
 	}
 
 
-	public Prerequisito getPrerequisito() {
-		return prerequisito;
+	public Float getPrice() {
+		return price;
 	}
 
 
-	public void setPrerequisito(Prerequisito prerequisito) {
-		this.prerequisito = prerequisito;
+	public void setPrice(Float price) {
+		this.price = price;
+	}
+
+
+	public List<Risultato> getRisultati() {
+		return risultati;
+	}
+
+
+	public void setRisultati(List<Risultato> risultati) {
+		this.risultati = risultati;
 	}
 
 
@@ -80,6 +100,29 @@ public class TipologiaEsameController {
 	public void setPrerequisiti(List<Prerequisito> prerequisiti) {
 		this.prerequisiti = prerequisiti;
 	}
-	
-	
+
+
+	public TipologiaEsame getTipologia() {
+		return tipologia;
+	}
+
+
+	public void setTipologia(TipologiaEsame tipologia) {
+		this.tipologia = tipologia;
+	}
+
+
+	public List<TipologiaEsame> getTipologie() {
+		return tipologie;
+	}
+
+
+	public void setTipologie(List<TipologiaEsame> tipologie) {
+		this.tipologie = tipologie;
+	}
+
+
+
+
+
 }

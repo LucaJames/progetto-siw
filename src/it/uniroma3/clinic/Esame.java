@@ -70,15 +70,18 @@ public class Esame {
 		this.tipologia = tipologia;
 	}
 	
-	public Esame(Date dataPrenotazione, Date dataSvolgimento,TipologiaEsame tipologia,Paziente paziente, Medico medico, Map<String,Risultato> risultati) {
+	public Esame(Date dataPrenotazione, Date dataSvolgimento,TipologiaEsame tipologia,Paziente paziente, Medico medico) {
 		this.dataPrenotazione = dataPrenotazione;
 		this.dataSvolgimento = dataSvolgimento;
 		this.tipologia = tipologia;
 		this.paziente = paziente;
 		this.medico = medico;
-		this.risultati = risultati;
+		this.risultati = new HashMap<String,Risultato>();
 	}
 	
+	public void addRisultato(String descrizione,Risultato r){
+		this.risultati.put(descrizione, r);
+	}
 	
 	
 

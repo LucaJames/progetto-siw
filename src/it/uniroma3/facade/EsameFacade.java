@@ -23,10 +23,11 @@ import javax.persistence.criteria.CriteriaQuery;
 	    private EntityManager em;
 	    
 		public Esame createEsame(Date dataPrenotazione, Date dataSvolgimento, TipologiaEsame tipologia,Map<String,Risultato> risultati, Paziente paziente, Medico medico) {
-			Esame e = new Esame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico, risultati);
+			Esame e = new Esame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico);
 			em.persist(e);
 			return e;
 		}
+		
 		
 		public Esame getEsame(Long id) {
 		    Esame e = em.find(Esame.class, id);
