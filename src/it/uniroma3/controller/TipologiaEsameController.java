@@ -36,7 +36,7 @@ public class TipologiaEsameController {
 		return "tipologie";
 	}
 
-	public String findPrerequisito(){
+	public String findTipologia(){
 		this.tipologia = tipologiaEsameFacade.getTipologiaEsame(id);
 		return "tipologia";
 	}

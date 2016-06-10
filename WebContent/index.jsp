@@ -33,8 +33,8 @@
 				<ul>
 					<li>
 						<h4>
-							<a href="<c:url value="/faces/index.jsp" />">guarda
-								i nostri esami</a>
+							<h:commandLink action="#{tipologiaEsameController.listTipologiaEsame}"
+							value="Lista tipologie esami disponibili" />
 						</h4>
 					</li>
 				</ul>
@@ -44,7 +44,7 @@
 				<h:form>
 					<div class="row">
 						<p class="col-sm-3">Id:</p>
-						<h:inputText id="username" value="username" required="true"
+						<h:inputText id="username" value="#{pazienteController.username}" required="true"
 							requiredMessage="Username Obbligatorio" />
 						<h:message for="username" styleClass="error" />
 					</div>
@@ -62,14 +62,14 @@
 					<div>
 						<h4>
 							Puoi iscriverti alla clinica cliccando 
-							<a href="<c:url value="/faces/loginPaziente.jsp"/>">qui</a>
+							<a href="<c:url value="/faces/newPaziente.jsp"/>">qui</a>
 						</h4>
 					</div>
 				</h:form>
 			</div>
 			<div class="col-sm-4">
 				<h3>
-					<a href="<c:url value="/faces/index.jsp"/>">Accedi come
+					<a href="<c:url value="/faces/loginAmministratore.jsp"/>">Accedi come
 						amministratore</a>
 				</h3>
 			</div>

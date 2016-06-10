@@ -1,21 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<f:view>
 	<h2> Login Amministratore </h2>
-	<h4> inserire codice e password dell'amministratore </h4>
-	<form action='<c:url value="/controller/amministratore.verifica" />' method='post'>
-		<div>${idError} Id: <input type='text' name='id' value='${param["codice"]}' 
-			placeholder="inserisci id"></div>
-		<div>${pswError} Password: <input type="password" name='password' 
-			placeholder="password"></div>
-		<div>${autenticazioneError}</div>
-		<div><input type="submit" name="submit" value="invia"></div>
-	</form>
+	<h4> Inserire codice e password dell'amministratore </h4>
+	<h:form>
+		<div> Username: 
+			<h:inputText value="#{amministratoreController.username}" 
+			required="true" 
+			requiredMessage="Username obbligatorio"
+			id="username" />
+			<h:message for="username" styleClass="error" />
+		</div>
+		<div>Password: 
+			<h:inputSecret
+			required="true"
+			requiredMessage="Password obbligatoria"
+			id="password" />
+			<h:message for="password" styleClass="error" />
+		</div>
+		<div><h:commandButton value="invia" action="#{amministratoreController.verificaAmministratore}" /></div>
+	</h:form>
+</f:view>
 </body>
 </html>

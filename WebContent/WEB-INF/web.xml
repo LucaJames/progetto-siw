@@ -9,10 +9,7 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 
-	<description>
-        Sito web per un clinica
-    </description>
-
+	
 
 	<!-- Servlet configuration -->
 	<servlet>
