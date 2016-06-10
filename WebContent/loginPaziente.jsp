@@ -16,13 +16,13 @@
 			Username:
 			<h:inputText value="#{pazienteController.username}" required="true"
 				requiredMessage="Nome Obbligatorio" id="username" />
-			<strong><h:message for="name" /></strong>
+				<h:message for="name" styleClass="error"/>		
 		</div>
 		<div>
 			Password:
 			<h:inputSecret required="true"
 				requiredMessage="Password Obbligatoria" id="password" />
-			<strong><h:message for="name" /></strong>
+			<h:message for="password" styleClass="error"/>
 		</div>
 		<div>Se combinazione errata: Errore</div>
 		<div>
