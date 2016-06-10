@@ -1,7 +1,6 @@
 package it.uniroma3.clinic;
 
 
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class Paziente {
 	@Column(nullable = false)
 	private String cognome;
 	@Column(nullable = false)
-	private String userName;
+	private String username;
 	@Column(nullable = false)
 	private String password;
 	@OneToMany(mappedBy = "paziente")
@@ -56,14 +55,13 @@ public class Paziente {
 		this.esami = esami;
 	}
 
-	public Paziente(String userName, String password, String nome, String cognome){
+	public Paziente(String user, String password, String nome, String cognome){
 		this.nome = nome;
 		this.cognome = cognome;
-		this.userName = userName;
+		this.username = user;
 		this.password = password;
 		this.esami = new LinkedList<>();
 	}
-	
 	
 	public void addEsame(Esame e){
 		this.esami.add(e);

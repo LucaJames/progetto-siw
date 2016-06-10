@@ -5,9 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import it.uniroma3.clinic.Amministratore;
 import it.uniroma3.controller.helper.HelperVerificaUtente;
 
-public class VerificaAmministratore implements Action{
+public class VerificaAmministratore{
 
-	@Override
 	public String perform(HttpServletRequest request) {
 		// TODO perform VerificaAmministratore
   		HelperVerificaUtente helper = new HelperVerificaUtente();

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,13 +9,26 @@
 <title>Login Page</title>
 </head>
 <body>
-	<h3> Login paziente </h3>
-	<h4> inserire id e password del paziente </h4>
-	<form action='/controller/utente.verifica' method='post'>
-		<div>${idError} Id: <input type='text' name='id' value='${param["id"]}' ></div>
-		<div>${pswError} Password: <input type="password" name='password' ></div>
-		<div>${autenticazioneError}</div>
-		<div><input type="submit" name="sumbit" value="invia"/></div>
+	<h3>Login paziente</h3>
+	<h4>inserire username e password del paziente</h4>
+	<form>
+		<div>
+			Username:
+			<h:inputText value="#{pazienteController.username}" required="true"
+				requiredMessage="Nome Obbligatorio" id="username" />
+			<strong><h:message for="name" /></strong>
+		</div>
+		<div>
+			Password:
+			<h:inputSecret required="true"
+				requiredMessage="Password Obbligatoria" id="password" />
+			<strong><h:message for="name" /></strong>
+		</div>
+		<div>Se combinazione errata: Errore</div>
+		<div>
+			<input type="reset" name="reset" value="Reimposta">
+			<h:commandButton value="invia" action="#{pazienteController.verificaPaziente}"/>
+		</div>
 	</form>
 </body>
 </html>

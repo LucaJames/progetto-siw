@@ -5,9 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import it.uniroma3.clinic.Paziente;
 import it.uniroma3.controller.helper.HelperVerificaUtente;
 
-public class VerificaPaziente implements Action{
+public class VerificaPaziente{
 
-	@Override
 	public String perform(HttpServletRequest request) {
 		// TODO perform VerificaPaziente
 		HelperVerificaUtente helper = new HelperVerificaUtente();

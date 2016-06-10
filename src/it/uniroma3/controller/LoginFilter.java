@@ -19,7 +19,7 @@ public class LoginFilter implements javax.servlet.Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// TODO Metodo da implmentare bene
+		// TODO Metodo da implementare bene
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpSession session = req.getSession();
 		if (session.getAttribute("utente")==null) { // questa condizione può essere definita meglio
