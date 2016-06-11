@@ -30,6 +30,8 @@ public class Paziente {
 	private String password;
 	@OneToMany(mappedBy = "paziente")
 	private List<Esame> esami;
+	
+	public Paziente(){}
 
 	public String getNome() {
 		return nome;

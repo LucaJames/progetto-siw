@@ -17,6 +17,8 @@ public class Prerequisito {
 	@Column(nullable = false)
 	private String descrizione;
 	
+	public Prerequisito(){}
+	
 	public Prerequisito(String descrizione){
 		this.descrizione = descrizione;
 	}

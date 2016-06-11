@@ -17,6 +17,8 @@ public class Risultato {
 	@Column(nullable = false)
 	private String descrizione;
 	
+	public Risultato(){}
+	
 	public Risultato(String descrizione){
 		this.descrizione = descrizione;
 	}

@@ -37,6 +37,8 @@ public class Esame {
 	private Paziente paziente;
 	@ManyToOne
 	private Medico medico;
+	
+	public Esame(){}
 
 	
 	public Date getDataPrenotazione() {

@@ -23,6 +23,8 @@ public class Amministratore {
 	@Column(nullable=false)
 	private String password;
 	
+	public Amministratore(){}
+	
 	
 	public Amministratore(String userName, String nome, String cognome, String password) {
 		this.userName = userName;

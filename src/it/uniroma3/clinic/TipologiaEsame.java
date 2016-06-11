@@ -34,6 +34,8 @@ public class TipologiaEsame {
 	@JoinColumn(name = "risultati_tipologia")
 	private List<Risultato> risultati;
 	
+	public TipologiaEsame(){}
+	
 	public Long getId() {
 		return id;
 	}

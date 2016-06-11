@@ -30,6 +30,8 @@ public class Medico {
 	@OneToMany
 	@JoinColumn(name="medico_id")
 	private List<Esame> esami;
+	
+	public Medico(){}
 
 
 	public String getNome() {

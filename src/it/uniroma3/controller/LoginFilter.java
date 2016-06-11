@@ -36,4 +36,10 @@ public class LoginFilter implements javax.servlet.Filter{
 		this.application = fConfig.getServletContext();	
 	}
 
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
