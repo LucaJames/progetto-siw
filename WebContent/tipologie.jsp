@@ -27,7 +27,7 @@
 								<f:param name="id" value="#{tip.id}" />
 							</h:commandLink>
 						</h:form></td>
-					<td>${tip.prezzo}</td>
+					<td>${tip.price}</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -17,7 +17,7 @@
 			Name:
 			<h:inputText value="#{pazienteController.nome}" required="true"
 				requiredMessage="Nome Obbligatorio" id="nome" />
-			<strong><h:message for="name" /></strong>
+			<strong><h:message for="nome" /></strong>
 		</div>
 		<div>
 			Cognome:
