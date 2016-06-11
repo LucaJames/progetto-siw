@@ -27,7 +27,7 @@ public class PazienteController {
 	
 	public String createPaziente(){
 		this.paziente = pazienteFacade.createPaziente(nome, cognome, username, password);
-		return "paziente";
+		return "newPaziente";
 	}
 	
 	public String listPazienti(){

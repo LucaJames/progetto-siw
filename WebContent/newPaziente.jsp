@@ -33,7 +33,7 @@
 		</div>
 		<div>
 			Password:
-			<h:inputSecret required="true"
+			<h:inputSecret value="#{pazienteController.password}" required="true"
 				requiredMessage="Password Obbligatoria" id="password" />
 			<strong><h:message for="password" /></strong>
 		</div>

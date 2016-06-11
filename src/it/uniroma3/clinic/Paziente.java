@@ -9,12 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
-@NamedQuery(name="findAllPatients", query = "SELECT p FROM Paziente p")
 public class Paziente {
 	
 	@Id
@@ -57,10 +55,10 @@ public class Paziente {
 		this.esami = esami;
 	}
 
-	public Paziente(String user, String password, String nome, String cognome){
+	public Paziente(String username, String password, String nome, String cognome){
 		this.nome = nome;
 		this.cognome = cognome;
-		this.username = user;
+		this.username = username;
 		this.password = password;
 		this.esami = new LinkedList<>();
 	}
