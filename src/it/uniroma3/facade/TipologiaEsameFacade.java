@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
+import it.uniroma3.clinic.Prerequisito;
 import it.uniroma3.clinic.TipologiaEsame;
 
 @Stateless
@@ -24,6 +25,23 @@ public class TipologiaEsameFacade {
 	public TipologiaEsame getTipologiaEsame(Long id){
 		TipologiaEsame tipEsame = em.find(TipologiaEsame.class, id);
 		return tipEsame;
+	}
+	
+	public List<Prerequisito> addPrerequisito(TipologiaEsame tipologiaEsame, Prerequisito prerequisitoEsame) {
+		List<Prerequisito> prerequisitiEsame = tipologiaEsame.getPrerequisiti();
+		System.out.println("LISTA PREREQ PRESA");
+		if (prerequisitiEsame==null) {
+			System.out.println("LISTA PREREQ NULL");
+		} else {
+			System.out.println("ELEMENTI LISTA PREREQ: " + prerequisitiEsame.size());
+		}
+		prerequisitiEsame.add(prerequisitoEsame);
+		System.out.println("PREREQ AGGIUNTO ALLA LISTA PRESA");
+		tipologiaEsame.setPrerequisitiEsame(prerequisitiEsame);
+		System.out.println("LISTA PREREQ SETTATA");
+		//this.updateTipologiaEsame(tipologiaEsame);
+		//System.out.println("TIPOLOGIA PREREQ AGGIORNATA");
+		return prerequisitiEsame;
 	}
 	
 	public List<TipologiaEsame> getAllTipologieEsami(){

@@ -26,7 +26,7 @@ public class TipologiaEsame {
 	@Column(nullable = false)
 	private String descrizione;
 	@Column(nullable = false)
-	private double price;
+	private Float price;
 	@OneToMany
 	@JoinColumn(name = "prequerisiti_tipologia")
 	private List<Prerequisito> prerequisiti;
@@ -60,23 +60,32 @@ public class TipologiaEsame {
 		this.descrizione = descrizione;
 	}
 	
-	public double getPrice() {
+	public Float getPrice() {
 		return price;
 	}
 	
-	public void setPrice(double price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
 	
 
-	public TipologiaEsame(String nome, String descrizione, double price) {
+	public TipologiaEsame(String nome, String descrizione, Float price) {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.price = price;
+		this.prerequisiti = new LinkedList<Prerequisito>();
 		this.risultati = new LinkedList<Risultato>();
 	}
 	
 	public void addPrerequisito(Prerequisito p){
 		this.prerequisiti.add(p);
+	}
+
+	public List<Prerequisito> getPrerequisiti() {
+	    return prerequisiti;
+	}
+	
+	public void setPrerequisitiEsame(List<Prerequisito> prerequisitiEsame) {
+		this.prerequisiti = prerequisitiEsame;
 	}
 }

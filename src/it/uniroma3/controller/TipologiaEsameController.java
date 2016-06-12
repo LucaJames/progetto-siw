@@ -17,17 +17,26 @@ public class TipologiaEsameController {
 	private String nome;
 	private String descrizione;
 	private Float price;
+	private Prerequisito prerequisito;
+	private String descrizionePrerequisito;
 	private List<Risultato> risultati;
 	private List<Prerequisito> prerequisiti;
 	private TipologiaEsame tipologia;
 	private List<TipologiaEsame> tipologie;
 
+
 	@EJB
 	private TipologiaEsameFacade tipologiaEsameFacade;
 
-	public String createTipologiaEsame(){
+	public String createTipologiaEsame() {
+
+		this.tipologia = new TipologiaEsame(this.nome, this.descrizione, this.price);
+
+
+		this.prerequisito = new Prerequisito(this.descrizionePrerequisito);
+		this.prerequisiti = tipologiaEsameFacade.addPrerequisito(this.tipologia, this.prerequisito);
 		this.tipologia = tipologiaEsameFacade.createTipologiaEsame(nome, descrizione, price);
-		return "prerequisito";
+		return "newTipologiaEsame";
 	}
 
 
@@ -122,7 +131,23 @@ public class TipologiaEsameController {
 	}
 
 
+	public Prerequisito getPrerequisito() {
+		return prerequisito;
+	}
 
 
+	public void setPrerequisito(Prerequisito prerequisito) {
+		this.prerequisito = prerequisito;
+	}
+
+
+	public String getDescrizionePrerequisito() {
+		return descrizionePrerequisito;
+	}
+
+
+	public void setDescrizionePrerequisito(String descrizionePrerequisito) {
+		this.descrizionePrerequisito = descrizionePrerequisito;
+	}
 
 }
