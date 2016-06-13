@@ -6,7 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
@@ -25,7 +24,9 @@ public class PazienteController {
 	private Paziente paziente;
 	private List<Paziente> pazienti;
 	private String message;
+	private String errore;
 	
+
 	@EJB
 	private PazienteFacade pazienteFacade;
 	
@@ -40,10 +41,11 @@ public class PazienteController {
             this.paziente = pazienteFacade.checkPassword(this.username, this.password);
 			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("paziente", paziente);
             return "homePaziente";
-
+            
         }catch (Exception e){
-
             this.message = e.getMessage();
+            String errore = "Combinazione usernare e password errata";
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("loginError", errore);
             return "index";
         }
 	}
@@ -130,6 +132,14 @@ public class PazienteController {
 
 	public void setEsami(List<Esame> esami) {
 		this.esami = esami;
+	}
+	
+	public String getErrore() {
+		return errore;
+	}
+
+	public void setErrore(String errore) {
+		this.errore = errore;
 	}
 
 	

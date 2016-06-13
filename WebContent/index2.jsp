@@ -10,7 +10,6 @@
 <style type="text/css">
 	<%@ include file="bootstrap/css/bootstrap.css" %>
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
-	<%@ include file="styleSheets/style.css" %>
 </style>
 <script type=”text/javascript” src=”bootstrap/js/bootstrap.min.js”></script>
 <title>Clinica</title>
@@ -19,26 +18,31 @@
 <body>
 	<f:view>
 		<div id="header">
-			<div class="jumbotron">
-				<h1 style="text-align: center; color: #3366ff">Best Clinic</h1>
-				<p style="text-align: center; color: #3366ff">Clinica
-					specializzata</p>
-				<img id="im_d"
-					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
-					alt="testo"
-					style="position: absolute; right: 75%; bottom: 70%; width: 12%">
-				<img id="im_s"
-					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
-					alt="testo"
-					style="position: absolute; left: 75%; bottom: 70%; width: 12%">
+			<div class="container">
+				<div class="jumbotron">
+					<h1 style="text-align: center; color: #3366ff">Best Clinic</h1>
+					<p style="text-align: center; color: #3366ff">Clinica
+						specializzata</p>
+					<img id="im_d"
+						src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
+						alt="testo"
+						style="position: absolute; right: 75%; bottom: 70%; width: 12%">
+					<img id="im_s"
+						src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
+						alt="testo"
+						style="position: absolute; left: 75%; bottom: 70%; width: 12%">
+				</div>
 			</div>
 
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="<c:url value="/index.html"/>">Clinica
-						</a>
+						<a class="navbar-brand" href="#">Clinica </a>
 					</div>
+					<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a
+							href="<c:url value="/faces/index2.jsp"/>">Home</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
 								Login Amministratore</a></li>
@@ -74,14 +78,7 @@
 							requiredMessage="Password Obbligatoria" />
 						<h:message for="password" styleClass="error" />
 					</div>
-					<div>
-						<c:if test='${param["errore"] != null}'>
-							myFunction()
-						</c:if>
-						<script>
-							function myFunction() {	alert("Combinazione utente e password errata");}
-						</script>
-					</div>
+					<div>Combinazione errata: Errore</div>
 					<div>
 						<h:commandButton value="invia"
 							action="#{pazienteController.loginPaziente}" />
