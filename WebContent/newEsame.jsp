@@ -14,9 +14,10 @@
 		<h2>Creazione Nuovo Esame</h2>
 		<h:form>
 			<div> Tipologia Esame: 
-				<h:selectManyMenu value="#{esameController.tipologia}">
-					<f:selectItems value="#{tipologiaEsameController.tipologie}" />
-				</h:selectManyMenu>
+				<h:selectOneMenu value="#{esameController.tipologia}" converter="#{tipologiaEsameConverter}">
+					<f:selectItems value="#{tipologiaEsameController.tipologie}" var="tipologia" itemValue="#{tipologia}"
+							itemLabel="#{tipologia.nome}"/>
+				</h:selectOneMenu>
 			</div>
 			<div>
 				Medico:
@@ -24,14 +25,25 @@
 					required="true" requiredMessage="Medico Obbligatorio" />
 				<h:message for="medico" styleClass="error" />
 			</div>
-			<div>
-				Paziente:
-				<h:inputText id="paziente" value="#{esameController.paziente}"
-					required="true" requiredMessage="Paziente Obbligatorio" />
-				<h:message for="paziente" styleClass="error" />
-			</div>
-			<h:commandButton value="Conferma"
-				action="#{esameController.createEsame}" />
+			
+		
+		<div>
+		
+		Paziente
+									
+					<h:selectOneMenu 
+											value="#{esameController.paziente}"
+											converter="#{pazienteConverter}">
+											<f:selectItems value="#{pazienteController.pazienti}"
+												var="paziente" itemValue="#{paziente}"
+												itemLabel="#{paziente.username}" />
+										</h:selectOneMenu>
+									</div>
+							
+		
+		
+		
+		
 		</h:form>
 	
 	</f:view>
