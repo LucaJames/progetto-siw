@@ -2,6 +2,7 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -27,6 +28,11 @@ public class TipologiaEsameController {
 
 	@EJB
 	private TipologiaEsameFacade tipologiaEsameFacade;
+	
+	@PostConstruct
+	public void init(){
+		this.tipologie = tipologiaEsameFacade.getAllTipologieEsami();
+	}
 
 	public String createTipologiaEsame() {
 
