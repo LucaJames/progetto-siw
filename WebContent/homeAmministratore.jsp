@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2> Home </h2>
-	<div> ${amministratore.nome} ${amministratore.cognome} </div>
+	<div> ${amministratoreController.nome} ${amministratoreController.cognome} </div>
 	<div>Operazioni Disponibili</div>
 	<ul>
 		<li><a href='<c:url value="/nuovoEsame.jsp" />' > Crea nuovo esame </a></li>

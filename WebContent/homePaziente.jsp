@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2> Home </h2>
-	<div> ${paziente.nome} ${paziente.cognome} </div>
+	<div> ${pazienteController.nome} ${pazienteController.cognome} </div>
 	<div> Esami Effettutati</div>
 	<ul>
 	<li> Lista Esami </li>

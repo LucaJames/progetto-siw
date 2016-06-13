@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class Paziente {
 	private String username;
 	@Column(nullable = false)
 	private String password;
-	@OneToMany(mappedBy = "paziente")
+	@OneToMany(mappedBy = "paziente", fetch = FetchType.EAGER)
 	private List<Esame> esami;
 	
 	public Paziente(){}
@@ -66,5 +67,27 @@ public class Paziente {
 	public void addEsame(Esame e){
 		this.esami.add(e);
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	 public boolean checkPassword(String password) {
+	        return this.password.equals(password);
+	    }
+	
+	
 
 }

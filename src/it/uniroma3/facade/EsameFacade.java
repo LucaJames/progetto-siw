@@ -22,7 +22,7 @@ import javax.persistence.criteria.CriteriaQuery;
 	    @PersistenceContext(unitName = "exams-unit")
 	    private EntityManager em;
 	    
-		public Esame createEsame(Date dataPrenotazione, Date dataSvolgimento, TipologiaEsame tipologia,Map<String,Risultato> risultati, Paziente paziente, Medico medico) {
+		public Esame createEsame(Date dataPrenotazione, Date dataSvolgimento, TipologiaEsame tipologia, Paziente paziente, Medico medico) {
 			Esame e = new Esame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico);
 			em.persist(e);
 			return e;

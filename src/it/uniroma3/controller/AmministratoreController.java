@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
@@ -20,10 +21,24 @@ public class AmministratoreController {
 	private String cognome;
 	private Amministratore amministratore;
 	private List<Amministratore> amministratori;
+	private String message;
 
 
 	@EJB
 	private AmministratoreFacade amministratoreFacade;
+	
+	public String loginAmministratore(){
+		try{
+            this.amministratore = amministratoreFacade.checkPassword(this.username, this.password);
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("amministratore", amministratore);
+            return "homeAmministratore";
+
+        }catch (Exception e){
+
+            this.message = e.getMessage();
+            return "index";
+        }
+	}
 
 	public String createAmministratore(){
 		this.amministratore = amministratoreFacade.createAmministratore(nome, cognome, username, password);
@@ -36,7 +51,7 @@ public class AmministratoreController {
 	}
 
 	public String findAmminisitratore(){
-		this.amministratore = amministratoreFacade.getAmministratore(id);
+		this.amministratore = amministratoreFacade.getAmministratore(username);
 		return "amministratore";
 	}
 

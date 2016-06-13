@@ -43,20 +43,20 @@
 				<h3>Login Paziente</h3>
 				<h:form>
 					<div class="row">
-						<p class="col-sm-3">Id:</p>
+						<p class="col-sm-3">Username:</p>
 						<h:inputText id="username" value="#{pazienteController.username}" required="true"
 							requiredMessage="Username Obbligatorio" />
 						<h:message for="username" styleClass="error" />
 					</div>
 					<div class="row">
 						<p class="col-sm-3">Password:</p>
-						<h:inputSecret id="password" required="true"
+						<h:inputSecret id="password" value="#{pazienteController.password}" required="true"
 							requiredMessage="Password Obbligatoria" />
 						<h:message for="password" styleClass="error" />
 					</div>
 					<div>Combinazione errata: Errore</div>
 					<div>
-						<h:commandButton value="invia" action="#{pazienteController.verificaPaziente}" />
+						<h:commandButton value="invia" action="#{pazienteController.loginPaziente}" />
 					</div>
 					<hr />
 					<div>

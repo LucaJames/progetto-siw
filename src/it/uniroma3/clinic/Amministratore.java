@@ -65,5 +65,9 @@ public class Amministratore {
 		this.password = password;
 	}
 	
+	 public boolean checkPassword(String password) {
+	        return this.password.equals(password);
+	    }
+	
 
 }

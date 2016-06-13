@@ -20,14 +20,14 @@
 		</div>
 		<div>
 			Password:
-			<h:inputSecret required="true"
+			<h:inputSecret value="#{pazienteController.password}" required="true"
 				requiredMessage="Password Obbligatoria" id="password" />
 			<h:message for="password" styleClass="error"/>
 		</div>
 		<div>Se combinazione errata: Errore</div>
 		<div>
 			<input type="reset" name="reset" value="Reimposta">
-			<h:commandButton value="invia" action="#{pazienteController.verificaPaziente}"/>
+			<h:commandButton value="invia" action="#{pazienteController.loginPaziente}"/>
 		</div>
 	</form>
 </body>

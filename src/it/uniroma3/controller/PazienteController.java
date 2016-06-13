@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
@@ -21,9 +23,23 @@ public class PazienteController {
 	private List<Esame> esami;
 	private Paziente paziente;
 	private List<Paziente> pazienti;
+	private String message;
 	
 	@EJB
 	private PazienteFacade pazienteFacade;
+	
+	public String loginPaziente(){
+		try{
+            this.paziente = pazienteFacade.checkPassword(this.username, this.password);
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("paziente", paziente);
+            return "homePaziente";
+
+        }catch (Exception e){
+
+            this.message = e.getMessage();
+            return "index";
+        }
+	}
 	
 	public String createPaziente(){
 		this.paziente = pazienteFacade.createPaziente(nome, cognome, username, password);

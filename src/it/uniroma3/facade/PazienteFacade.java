@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
@@ -23,9 +24,26 @@ public class PazienteFacade {
 		return p;
 	}
 	
-	public Paziente getPaziente(Long id){
-		Paziente p = em.find(Paziente.class, id);
-		return p;
+	 public Paziente checkPassword(String username, String password) throws Exception {
+	        Paziente p;
+
+	        try {
+	            Query query = this.em.createQuery("SELECT p FROM Paziente p WHERE p.username=:username");
+	            query.setParameter("username", username);
+	            p = (Paziente) query.getSingleResult();
+
+	        }catch (Exception e){
+	            throw new Exception("Paziente inesistente!");
+	        }
+	        if(!p.checkPassword(password))
+	            throw new Exception("Password non corretta!");
+
+	        return p;
+	    }
+	
+	public Paziente getPaziente(Long id) {
+	    Paziente paziente = em.find(Paziente.class, id);
+		return paziente;
 	}
 	
 	public List<Paziente> getAllPazienti(){

@@ -20,7 +20,7 @@ public class EsameController {
 	private Date dataPrenotazione;
 	private Date dataSvolgimento;
 	private TipologiaEsame tipologia;
-	private Map<String,Risultato> risutati;
+	private Map<String,Risultato> risultati;
 	private Paziente paziente;
 	private Medico medico;
 	private Esame esame;
@@ -31,7 +31,7 @@ public class EsameController {
 	private EsameFacade esameFacade;
 
 	public String createEsame(){
-		this.esame = esameFacade.createEsame(dataPrenotazione, dataSvolgimento, tipologia, risutati, paziente, medico);
+		this.esame = esameFacade.createEsame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico);
 		return "esame";
 	}
 	
@@ -88,12 +88,12 @@ public class EsameController {
 
 
 	public Map<String, Risultato> getRisutati() {
-		return risutati;
+		return risultati;
 	}
 
 
 	public void setRisutati(Map<String, Risultato> risutati) {
-		this.risutati = risutati;
+		this.risultati = risutati;
 	}
 
 

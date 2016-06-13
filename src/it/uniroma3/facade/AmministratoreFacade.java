@@ -5,9 +5,11 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.clinic.Amministratore;
+import it.uniroma3.clinic.Paziente;
 
 @Stateless
 public class AmministratoreFacade {
@@ -21,8 +23,25 @@ public class AmministratoreFacade {
 		return a;
 	}
 	
-	public Amministratore getAmministratore(Long id){
-		Amministratore a = em.find(Amministratore.class, id);
+	 public Amministratore checkPassword(String username, String password) throws Exception {
+	        Amministratore a;
+
+	        try {
+	            Query query = this.em.createQuery("SELECT a FROM Amministratore a WHERE a.username=:username");
+	            query.setParameter("username", username);
+	            a = (Amministratore) query.getSingleResult();
+
+	        }catch (Exception e){
+	            throw new Exception("Amministratore inesistente!");
+	        }
+	        if(!a.checkPassword(password))
+	            throw new Exception("Password non corretta!");
+
+	        return a;
+	    }
+	
+	public Amministratore getAmministratore(String username){
+		Amministratore a = em.find(Amministratore.class, username);
 		return a;
 	}
 	

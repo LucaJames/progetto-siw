@@ -21,13 +21,13 @@
 			<h:message for="username" styleClass="error" />
 		</div>
 		<div>Password: 
-			<h:inputSecret
+			<h:inputSecret value="#{amministratoreController.password}" 
 			required="true"
 			requiredMessage="Password obbligatoria"
 			id="password" />
 			<h:message for="password" styleClass="error" />
 		</div>
-		<div><h:commandButton value="invia" action="#{amministratoreController.verificaAmministratore}" /></div>
+		<div><h:commandButton value="invia" action="#{amministratoreController.loginAmministratore}" /></div>
 	</h:form>
 </f:view>
 </body>
