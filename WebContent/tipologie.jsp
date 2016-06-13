@@ -7,30 +7,69 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	<%@ include file="bootstrap/css/bootstrap.css" %>
+	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
+	<%@ include file="styleSheets/style.css" %>
+</style>
 <title>List Tipologie</title>
 </head>
 <body>
 	<f:view>
-		<table>
-			<tr>
-				<th>Tipologie Esami</th>
-			</tr>
-			<tr>
-				<th>Nome</th>
-				<th>Prezzo</th>
-			</tr>
-			<c:forEach var="tip" items="#{tipologiaEsameController.tipologie}">
+		<div id="header">
+			<div class="jumbotron">
+				<h1 style="text-align: center; color: #3366ff">Best Clinic</h1>
+				<p style="text-align: center; color: #3366ff">Clinica
+					specializzata</p>
+				<img id="im_d"
+					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
+					alt="testo"
+					style="position: absolute; right: 75%; bottom: 70%; width: 12%">
+				<img id="im_s"
+					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
+					alt="testo"
+					style="position: absolute; left: 75%; bottom: 70%; width: 12%">
+			</div>
+
+
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="<c:url value="/index.html"/>">Clinica
+						</a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
+								Login Amministratore</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="corpo">
+			<table id="t_tipologie">
 				<tr>
-					<td><h:form>
-							<h:commandLink action="#{tipologiaEsameController.findTipologia}"
-								value="#{tip.nome}">
-								<f:param name="id" value="#{tip.id}" />
-							</h:commandLink>
-						</h:form></td>
-					<td>${tip.price}</td>
+					<th><h4>Tipi di esami dispinibili</h4></th>
 				</tr>
-			</c:forEach>
-		</table>
+				<tr>&nbsp
+				</tr>
+				<tr>
+					<th>Nome</th>
+					<th>Prezzo</th>
+				</tr>
+				<c:forEach var="tip" items="#{tipologiaEsameController.tipologie}">
+					<tr>
+						<td><h:form>
+								<h:commandLink
+									action="#{tipologiaEsameController.findTipologia}"
+									value="#{tip.nome}">
+									<f:param name="id" value="#{tip.id}" />
+								</h:commandLink>
+							</h:form></td>
+						<td>${tip.price}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</f:view>
 </body>
 </html>
