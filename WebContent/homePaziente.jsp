@@ -7,8 +7,9 @@
 <title>Home page Paziente</title>
 </head>
 <body>
-	<h2> Home </h2>
-	<div> ${pazienteController.nome} ${pazienteController.cognome} </div>
+	<h2> Homepage </h2>
+	<div> ${pazienteController.paziente.nome} ${pazienteController.paziente.cognome} </div>
+	<hr />
 	<div> Esami Effettutati</div>
 	<ul>
 	<li> Lista Esami </li>
@@ -17,7 +18,7 @@
 		<li><a href="<c:url value="/controller/esame.get?id=${esame.id}" />">${esame.name}</a></li>
 	</c:forEach>
 	-->
-	<li><a href="<c:url value="/index.jsp" />">Home</a></li>
+	<li><a href="<c:url value="/index.html" />">Home</a></li>
 	</ul>
 </body>
 </html>

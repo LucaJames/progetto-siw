@@ -32,10 +32,10 @@
 				<h3>Tipologie di esami forniti dalla clinica</h3>
 				<ul>
 					<li>
-						<h4><h:form>
+						<h:form>
 							<h:commandLink action="#{tipologiaEsameController.listTipologiaEsame}"
 							value="Lista tipologie esami disponibili" />
-						</h:form></h4>
+						</h:form>
 					</li>
 				</ul>
 			</div>

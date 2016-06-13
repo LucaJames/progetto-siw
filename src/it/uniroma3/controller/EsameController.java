@@ -31,7 +31,7 @@ public class EsameController {
 	private EsameFacade esameFacade;
 
 	public String createEsame(){
-		this.esame = esameFacade.createEsame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico);
+		this.esame = esameFacade.createEsame(new Date(), tipologia, paziente, medico);
 		return "esame";
 	}
 	

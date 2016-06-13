@@ -31,14 +31,11 @@ public class TipologiaEsameController {
 	public String createTipologiaEsame() {
 
 		this.tipologia = new TipologiaEsame(this.nome, this.descrizione, this.price);
-
-
 		this.prerequisito = new Prerequisito(this.descrizionePrerequisito);
 		this.prerequisiti = tipologiaEsameFacade.addPrerequisito(this.tipologia, this.prerequisito);
 		this.tipologia = tipologiaEsameFacade.createTipologiaEsame(nome, descrizione, price);
 		return "newTipologiaEsame";
 	}
-
 
 	public String listTipologiaEsame(){
 		this.tipologie = tipologiaEsameFacade.getAllTipologieEsami();

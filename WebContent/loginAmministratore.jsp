@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,12 @@
 			id="password" />
 			<h:message for="password" styleClass="error" />
 		</div>
-		<div><h:commandButton value="invia" action="#{amministratoreController.loginAmministratore}" /></div>
+		<div>
+			<h:commandButton value="Invia" action="#{amministratoreController.loginAmministratore}" />
+			&nbsp
+			<a href="<c:url value="/index.html" />">Home</a>
+		</div>
+		
 	</h:form>
 </f:view>
 </body>

@@ -3,12 +3,10 @@ package it.uniroma3.facade;
 import it.uniroma3.clinic.Esame;
 import it.uniroma3.clinic.Medico;
 import it.uniroma3.clinic.Paziente;
-import it.uniroma3.clinic.Risultato;
 import it.uniroma3.clinic.TipologiaEsame;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,8 +20,8 @@ import javax.persistence.criteria.CriteriaQuery;
 	    @PersistenceContext(unitName = "exams-unit")
 	    private EntityManager em;
 	    
-		public Esame createEsame(Date dataPrenotazione, Date dataSvolgimento, TipologiaEsame tipologia, Paziente paziente, Medico medico) {
-			Esame e = new Esame(dataPrenotazione, dataSvolgimento, tipologia, paziente, medico);
+		public Esame createEsame(Date dataPrenotazione, TipologiaEsame tipologia, Paziente paziente, Medico medico) {
+			Esame e = new Esame(dataPrenotazione, tipologia, paziente, medico);
 			em.persist(e);
 			return e;
 		}
