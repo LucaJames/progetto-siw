@@ -4,8 +4,8 @@
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<f:view>
-	<html>
+
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
@@ -39,7 +39,7 @@
 					</div>
 					<ul class="nav navbar-nav">
 						<li><a href="<c:url value="/faces/homeAmministratore.jsp"/>">
-							Home Amministratore</a></li>
+								Home Amministratore</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
@@ -52,20 +52,20 @@
 			<h2>Creazione nuova tipologia di esame</h2>
 			<h:form>
 				<div>
-					Nome:
+					<strong>Nome: </strong>
 					<h:inputText value="#{tipologiaEsameController.nome}"
 						required="true" requiredMessage="Nome Obbligatorio" id="nome" />
 					<strong><h:message for="nome" /></strong>
 				</div>
 				<div>
-					Descrizione:
+					<strong>Descrizione: </strong>
 					<h:inputText value="#{tipologiaEsameController.descrizione}"
 						required="true" requiredMessage="Descrizione Obbligatoria"
 						id="descrizione" />
 					<strong><h:message for="descrizione" /></strong>
 				</div>
 				<div>
-					Prezzo:
+					<strong>Prezzo: </strong>
 					<h:inputText value="#{tipologiaEsameController.price}"
 						required="true" requiredMessage="Username Obbligatorio" id="price" />
 					<strong><h:message for="price" /></strong>
@@ -83,5 +83,4 @@
 		</div>
 	</f:view>
 </body>
-	</html>
-</f:view>
+</html>

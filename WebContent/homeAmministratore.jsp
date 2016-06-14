@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Home page Amministratore</title>
+<title>Clinica-Home Amministratore</title>
 </head>
 <body>
 	<f:view>
@@ -49,10 +49,11 @@
 		</div>
 		<div id="corpo">
 			<h2>Home Page Amministratore</h2>
-			<div>${amministratoreController.amministratore.nome}
-				${amministratoreController.amministratore.cognome}</div>
+			<div><h3><strong>${amministratoreController.amministratore.nome}</strong>&nbsp
+				<strong>${amministratoreController.amministratore.cognome}</strong></h3>
+			</div>
 			<div>
-				<h3>Operazioni Disponibili</h3>
+				<strong>Operazioni Disponibili</strong>
 			</div>
 			<ul>
 				<li><a href='<c:url value="/faces/newEsame.jsp" />'> Crea
