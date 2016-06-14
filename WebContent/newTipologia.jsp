@@ -52,26 +52,26 @@
 			<h2>Creazione nuova tipologia di esame</h2>
 			<h:form>
 				<div>
-					<strong>Nome: &nbsp</strong>
+					<strong>Nome: </strong>
 					<h:inputText value="#{tipologiaEsameController.nome}"
 						required="true" requiredMessage="Nome Obbligatorio" id="nome" />
 					<strong><h:message for="nome" /></strong>
 				</div>
 				<div>
-					<strong>Descrizione: &nbsp</strong>
+					<strong>Descrizione: </strong>
 					<h:inputText value="#{tipologiaEsameController.descrizione}"
 						required="true" requiredMessage="Descrizione Obbligatoria"
 						id="descrizione" />
 					<strong><h:message for="descrizione" /></strong>
 				</div>
 				<div>
-					<strong>Prezzo: &nbsp</strong>
+					<strong>Prezzo: </strong>
 					<h:inputText value="#{tipologiaEsameController.price}"
 						required="true" requiredMessage="Username Obbligatorio" id="price" />
 					<strong><h:message for="price" /></strong>
 				</div>
 				<div>
-					<strong>Prerequisito: &nbsp</strong>
+					<strong>Prerequisito: </strong>
 					<h:inputText
 						value="#{tipologiaEsameController.descrizionePrerequisito}"
 						id="prerequisito" />
