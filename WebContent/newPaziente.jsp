@@ -10,6 +10,7 @@
 <style type="text/css">
 	<%@ include file="bootstrap/css/bootstrap.css" %>
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
+	<%@ include file="styleSheets/style.css" %>
 </style>
 <title>Nuovo Paziente</title>
 </head>
