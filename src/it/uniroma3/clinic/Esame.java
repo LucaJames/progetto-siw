@@ -23,9 +23,9 @@ public class Esame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(nullable = false)
+	@Column
 	private Date dataPrenotazione;
-	@Column(nullable = false)
+	@Column
 	private Date dataSvolgimento;
 	@OneToOne
 	@JoinColumn(name = "tipologia")

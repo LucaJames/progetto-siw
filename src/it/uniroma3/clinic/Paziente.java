@@ -87,7 +87,16 @@ public class Paziente {
 	 public boolean checkPassword(String password) {
 	        return this.password.equals(password);
 	    }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
+	 
 	
 
 }

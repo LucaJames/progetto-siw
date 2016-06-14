@@ -48,7 +48,7 @@
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-5">
-				<h3>Tipologie di esami forniti dalla clinicaaa</h3>
+				<h3>Tipologie di esami forniti dalla clinica</h3>
 				<ul>
 					<li><h:form>
 							<h:commandLink
