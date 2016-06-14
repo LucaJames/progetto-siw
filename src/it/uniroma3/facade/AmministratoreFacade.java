@@ -17,8 +17,8 @@ public class AmministratoreFacade {
 	@PersistenceContext(unitName = "exams-unit")
 	private EntityManager em;
 	
-	public Amministratore createAmministratore(String userName, String nome, String cognome, String password){
-		Amministratore a = new Amministratore(userName, nome, cognome, password);
+	public Amministratore createAmministratore(String username, String nome, String cognome, String password){
+		Amministratore a = new Amministratore(username, nome, cognome, password);
 		em.persist(a);
 		return a;
 	}
