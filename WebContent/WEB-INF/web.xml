@@ -8,6 +8,40 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
+	
+	<!-- definizione filtri -->
+	<filter>
+		<filter-name>FiltroAmministratore</filter-name>
+		<filter-class>it.uniroma3.filter.FiltroAmministratore</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>FiltroPaziente</filter-name>
+		<filter-class>it.uniroma3.filter.FiltroPaziente</filter-class>
+	</filter>
+
+	 <!--  mapping filtri -->
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/*/newEsame.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/*/newTipologia.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/*/mostraEsamiMedico.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/*/homeAmministratore.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>FiltroPaziente</filter-name>
+		<url-pattern>/*/homePaziente.jsp</url-pattern>
+	</filter-mapping>
 
 	
 
@@ -22,5 +56,4 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
-
 </web-app>     

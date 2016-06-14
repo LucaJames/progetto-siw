@@ -3,14 +3,17 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
 
 @ManagedBean(name = "medicoController")
+@SessionScoped
 public class MedicoController {
 
 	@ManagedProperty(value="#{param.id}")
@@ -25,6 +28,11 @@ public class MedicoController {
 
 	@EJB
 	private MedicoFacade medicoFacade;
+	
+	@PostConstruct
+	public void init(){
+		this.medici = medicoFacade.getAllMedici();
+	}
 
 	public String createMedico(){
 		this.medico = medicoFacade.createMedico(nome, cognome, specializzazione);

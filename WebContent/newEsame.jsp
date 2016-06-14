@@ -59,11 +59,14 @@
 							itemLabel="#{tipologia.nome}" />
 					</h:selectOneMenu>
 				</div>
+			
 				<div>
 					Medico:
-					<h:inputText id="medico" value="#{esameController.medico}"
-						required="true" requiredMessage="Medico Obbligatorio" />
-					<h:message for="medico" styleClass="error" />
+					<h:selectOneMenu value="#{esameController.medico}" converter="#{medicoConverter}">
+						<f:selectItems value="#{medicoController.medici}"
+							var="medico" itemValue="#{medico}"
+							itemLabel="#{medico.cognome}" />
+					</h:selectOneMenu>
 				</div>
 				<div>
 					Paziente:
@@ -74,6 +77,11 @@
 							itemLabel="#{paziente.username}" />
 					</h:selectOneMenu>
 				</div>
+				
+						<h:commandButton value="Invia"
+					action="#{esameController.createEsame}" />
+					
+				
 			</h:form>
 		</div>
 	</f:view>

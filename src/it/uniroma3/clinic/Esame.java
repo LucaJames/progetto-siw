@@ -83,6 +83,28 @@ public class Esame {
 	public void addRisultato(String descrizione,Risultato r){
 		this.risultati.put(descrizione, r);
 	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Map<String, Risultato> getRisultati() {
+		return risultati;
+	}
+
+
+	public void setRisultati(Map<String, Risultato> risultati) {
+		this.risultati = risultati;
+	}
+	
+	
 	
 	
 
