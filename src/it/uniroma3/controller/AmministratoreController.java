@@ -34,9 +34,8 @@ public class AmministratoreController {
             return "homeAmministratore";
 
         }catch (Exception e){
-
             this.message = e.getMessage();
-            return "index";
+            return "loginAmministratore";
         }
 	}
 
