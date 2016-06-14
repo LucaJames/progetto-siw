@@ -20,8 +20,7 @@
 		<div id="header">
 			<div class="jumbotron">
 				<h1 id="title">Best Clinic</h1>
-				<p id="title">Clinica
-					specializzata</p>
+				<p id="title">Clinica specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"
@@ -49,18 +48,26 @@
 			<h4>Inserire codice e password dell'amministratore</h4>
 			<h:form>
 				<div>
-					Username:
+					<strong>Username: </strong>
 					<h:inputText value="#{amministratoreController.username}"
 						required="true" requiredMessage="Username obbligatorio"
 						id="username" />
 					<h:message for="username" styleClass="error" />
 				</div>
 				<div>
-					Password:
+					<strong>Password: </strong>
 					<h:inputSecret value="#{amministratoreController.password}"
 						required="true" requiredMessage="Password obbligatoria"
 						id="password" />
 					<h:message for="password" styleClass="error" />
+				</div>
+				<div>
+					<c:if test='${amministratoreController.errore != null}'>
+						<script>
+							errorFunction()
+							function errorFunction() {	alert("Combinazione utente e password errata");}
+						</script>
+					</c:if>
 				</div>
 				<div>
 					<h:commandButton value="Invia"

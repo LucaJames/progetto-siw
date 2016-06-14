@@ -19,8 +19,7 @@
 		<div id="header">
 			<div class="jumbotron">
 				<h1 id="title">Best Clinic</h1>
-				<p id="title">Clinica
-					specializzata</p>
+				<p id="title">Clinica specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"
@@ -38,7 +37,7 @@
 					</div>
 					<ul class="nav navbar-nav">
 						<li><a href="<c:url value="/faces/homePaziente.jsp"/>">
-							Home Paziente</a></li>
+								Home Paziente</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
@@ -48,12 +47,19 @@
 			</nav>
 		</div>
 		<div id="corpo">
-		<h2>Dettaglio Esame</h2>
-		<div><strong>Tipologia Esame: </strong>${esameController.esame.tipologia}</div>
-			<div><strong>Data Prenotazione: </strong>${esameController.esame.dataPrenotazione}</div>
-			<div><strong>Data Svolgimento: </strong>${esameController.esame.dataSvolgimento}</div>
-			<div><strong>Medico: </strong>${esameController.esame.medico}</div>
-		
+			<h2>Lista Esami</h2>
+			<ul>
+				<c:forEach var="esame" items="#{pazienteController.esami}">
+					<li><h:form>
+							<h:commandLink action="#{esameController.findEsame}"
+								value="#{esame.tipologia.nome}">
+								<f:param name="id" value="#{esame.id}" />
+							</h:commandLink>
+						</h:form></li>
+				</c:forEach>
+			</ul>
+			<div>${pazienteController.noEsami}</div>
+
 		</div>
 	</f:view>
 </body>

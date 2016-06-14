@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
 
@@ -50,5 +51,16 @@ import javax.persistence.criteria.CriteriaQuery;
 		public void deleteEsame(Long id) {
 	        Esame esame = em.find(Esame.class, id);
 	        deleteEsame(esame);
+		}
+
+
+		public List<Esame> getEsamiPaziente(Long id) {
+			
+			String p = id.toString();
+			TypedQuery<Esame> q = em.createQuery("SELECT * FROM Esame e WHERE e.paziente = ?", Esame.class);
+			q.setParameter(1, p);
+			List<Esame> esamiPaziente = q.getResultList();
+			return esamiPaziente;
+			
 		}
 }

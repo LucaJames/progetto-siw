@@ -23,6 +23,7 @@ public class AmministratoreController {
 	private Amministratore amministratore;
 	private List<Amministratore> amministratori;
 	private String message;
+	private String errore = null;
 
 
 	@EJB
@@ -41,6 +42,7 @@ public class AmministratoreController {
 
         }catch (Exception e){
             this.message = e.getMessage();
+            this.errore = "Combinazione usernare e password errata";
             return "loginAmministratore";
         }
 	}
@@ -124,6 +126,12 @@ public class AmministratoreController {
 		this.amministratoreFacade = amministratoreFacade;
 	}
 
+	public String getErrore() {
+		return errore;
+	}
 
+	public void setErrore(String errore) {
+		this.errore = errore;
+	}
 
 }

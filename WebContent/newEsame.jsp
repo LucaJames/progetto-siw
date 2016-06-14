@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Nuovo Esame</title>
+<title>Clinic-Nuovo Esame</title>
 </head>
 <body>
 	<f:view>
@@ -53,20 +53,19 @@
 				<div>
 					<strong>Tipologia Esame: </strong>
 					<h:selectOneMenu value="#{esameController.tipologia}"
-						converter="#{tipologiaEsameConverter}">
+						converter="#{tipologiaEsameConverter}" >
 						<f:selectItems value="#{tipologiaEsameController.tipologie}"
 							var="tipologia" itemValue="#{tipologia}"
 							itemLabel="#{tipologia.nome}" />
 					</h:selectOneMenu>
 				</div>
-			
 				<div>
 					<strong>Medico: </strong>
 					<h:selectOneMenu value="#{esameController.medico}" 
 						converter="#{medicoConverter}">
 						<f:selectItems value="#{medicoController.medici}"
 							var="medico" itemValue="#{medico}"
-							itemLabel="#{medico.cognome}" />
+							itemLabel="#{medico.nome} #{medico.cognome}" />
 					</h:selectOneMenu>
 				</div>
 				<div>
@@ -75,7 +74,7 @@
 						converter="#{pazienteConverter}">
 						<f:selectItems value="#{pazienteController.pazienti}"
 							var="paziente" itemValue="#{paziente}"
-							itemLabel="#{paziente.nome} #{paziente.cognome}" />
+							itemLabel="#{paziente.nome} #{paziente.cognome}"/>
 					</h:selectOneMenu>
 				</div>
 				<h:commandButton value="Conferma" action="#{esameController.createEsame}" />				

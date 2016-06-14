@@ -61,25 +61,25 @@
 				<h3>Login Paziente</h3>
 				<h:form>
 					<div class="row">
-						<p class="col-sm-3">Username:</p>
+						<p class="col-sm-3"><strong>Username:</strong></p>
 						<h:inputText id="username" value="#{pazienteController.username}"
 							required="true" requiredMessage="Username Obbligatorio" />
 						<h:message for="username" styleClass="error" />
 					</div>
 					<div class="row">
-						<p class="col-sm-3">Password:</p>
+						<p class="col-sm-3"><strong>Password:</strong></p>
 						<h:inputSecret id="password"
 							value="#{pazienteController.password}" required="true"
 							requiredMessage="Password Obbligatoria" />
 						<h:message for="password" styleClass="error" />
 					</div>
 					<div>
-						<c:if test='${param["loginError"] != null}'>
-							errorFunction()
+						<c:if test='${pazienteController.errore != null}'>
+							<script>
+								errorFunction()
+								function errorFunction() {	alert("Combinazione utente e password errata");}
+							</script>
 						</c:if>
-						<script>
-							function errorFunction() {	alert("Combinazione utente e password errata");}
-						</script>
 					</div>
 					<div>
 						<h:commandButton value="invia"

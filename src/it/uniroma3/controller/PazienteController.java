@@ -24,17 +24,37 @@ public class PazienteController {
 	private Paziente paziente;
 	private List<Paziente> pazienti;
 	private String message;
-	private String errore;
+	private String errore = null;
+	private String noEsami = null;
 	
+
+	@ManagedProperty(value="#{esameController}")
+	public EsameController esameController;
+
+	public EsameController getEsameController() {
+		return esameController;
+	}
+
+	public void setEsameController(EsameController esameController) {
+		this.esameController = esameController;
+	}
 
 	@EJB
 	private PazienteFacade pazienteFacade;
 	
+	@EJB
+	private EsameFacade esameFacade;
+	
 	@PostConstruct
 	public void init(){
-		this.pazienti = pazienteFacade.getAllPazienti();
+		try {
+			this.pazienti = pazienteFacade.getAllPazienti();
+			this.esami = esameController.getEsamiPaziente(id);
+		} catch (Exception e) {
+			message = e.getMessage();
+			System.console();
+		}
 	}
-
 	
 	public String loginPaziente(){
 		try{
@@ -44,8 +64,7 @@ public class PazienteController {
             
         }catch (Exception e){
             this.message = e.getMessage();
-            String errore = "Combinazione usernare e password errata";
-            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("loginError", errore);
+            this.errore = "Combinazione usernare e password errata";
             return "index";
         }
 	}
@@ -65,9 +84,11 @@ public class PazienteController {
 		return "paziente";
 	}
 	
-	public String findEsamePazienteByID(){
+	public String listEsamiPaziente(){
 		this.esami = pazienteFacade.getEsamiPaziente(id);
-		return "esami";
+		if(esami.size()==0)
+			noEsami = "Esami sostenuti: " + esami.size();
+		return "esamiPaziente";
 	}	
 	
 	public Long getId() {
@@ -142,7 +163,13 @@ public class PazienteController {
 		this.errore = errore;
 	}
 
-	
+	public String getNoEsami() {
+		return noEsami;
+	}
+
+	public void setNoEsami(String noEsami) {
+		this.noEsami = noEsami;
+	}
 	
 	
 }

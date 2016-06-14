@@ -26,8 +26,7 @@ public class EsameController {
 	private Medico medico;
 	private Esame esame;
 	private List<Esame> esami;
-
-
+	
 	@EJB
 	private EsameFacade esameFacade;
 	
@@ -38,7 +37,7 @@ public class EsameController {
 
 	public String createEsame(){
 		this.esame = esameFacade.createEsame(new Date(), tipologia, paziente, medico);
-		return "esame";
+		return "esameCreato";
 	}
 	
 
@@ -140,6 +139,10 @@ public class EsameController {
 
 	public void setEsami(List<Esame> esami) {
 		this.esami = esami;
+	}
+
+	public List<Esame> getEsamiPaziente(Long id) {
+		return this.esameFacade.getEsamiPaziente(id);
 	}
 	
 	

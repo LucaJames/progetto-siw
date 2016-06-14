@@ -60,9 +60,9 @@
 						nuovo esame </a></li>
 				<li><a href='<c:url value="/faces/newTipologia.jsp" />'>
 						Inserisci nuova tipologia di esame </a></li>
-				<li><a href='<c:url value="/faces/esamiMedico.jsp" />'>
+				<li><a href='<c:url value="#" />'>
 						Visualizza esami effettuati da un medico </a></li>
-				<li><a href='<c:url value="/faces/inserisciRisultati.jsp" />'>
+				<li><a href='<c:url value="#" />'>
 						Inserisci risultati </a></li>
 			</ul>
 

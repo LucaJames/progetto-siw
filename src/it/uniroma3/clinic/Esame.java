@@ -25,7 +25,7 @@ public class Esame {
 	private Long id;
 	@Column
 	private Date dataPrenotazione;
-	@Column
+	@Column(nullable = true)
 	private Date dataSvolgimento;
 	@OneToOne
 	@JoinColumn(name = "tipologia")

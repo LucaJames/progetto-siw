@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Nuovo Paziente</title>
+<title>Clinic-Nuovo Paziente</title>
 </head>
 <body>
 	<f:view>
@@ -47,25 +47,25 @@
 			<h2>Creazione nuovo profilo paziente</h2>
 			<h:form>
 				<div>
-					Name:
+					<strong>Name: </strong>
 					<h:inputText value="#{pazienteController.nome}" required="true"
 						requiredMessage="Nome Obbligatorio" id="nome" />
 					<strong><h:message for="nome" /></strong>
 				</div>
 				<div>
-					Cognome:
+					<strong>Cognome: </strong>
 					<h:inputText value="#{pazienteController.cognome}" required="true"
 						requiredMessage="Cognome Obbligatorio" id="cognome" />
 					<strong><h:message for="cognome" /></strong>
 				</div>
 				<div>
-					Username:
+					<strong>Username: </strong>
 					<h:inputText value="#{pazienteController.username}" required="true"
 						requiredMessage="Username Obbligatorio" id="username" />
 					<strong><h:message for="username" /></strong>
 				</div>
 				<div>
-					Password:
+					<strong>Password: </strong>
 					<h:inputSecret value="#{pazienteController.password}"
 						required="true" requiredMessage="Password Obbligatoria"
 						id="password" />
