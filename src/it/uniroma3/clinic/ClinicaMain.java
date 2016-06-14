@@ -1,8 +1,6 @@
 package it.uniroma3.clinic;
 
 
-import it.uniroma3.persistence.PazienteDao;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 

@@ -62,7 +62,8 @@
 			
 				<div>
 					<strong>Medico: </strong>
-					<h:selectOneMenu value="#{esameController.medico}" converter="#{medicoConverter}">
+					<h:selectOneMenu value="#{esameController.medico}" 
+						converter="#{medicoConverter}">
 						<f:selectItems value="#{medicoController.medici}"
 							var="medico" itemValue="#{medico}"
 							itemLabel="#{medico.cognome}" />
@@ -77,11 +78,7 @@
 							itemLabel="#{paziente.nome} #{paziente.cognome}" />
 					</h:selectOneMenu>
 				</div>
-				
-						<h:commandButton value="Invia"
-					action="#{esameController.createEsame}" />
-					
-				
+				<h:commandButton value="Conferma" action="#{esameController.createEsame}" />				
 			</h:form>
 		</div>
 	</f:view>

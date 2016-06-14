@@ -1,9 +1,7 @@
 package it.uniroma3.converter;
 
 import it.uniroma3.clinic.Esame;
-import it.uniroma3.clinic.TipologiaEsame;
 import it.uniroma3.facade.EsameFacade;
-import it.uniroma3.facade.TipologiaEsameFacade;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
