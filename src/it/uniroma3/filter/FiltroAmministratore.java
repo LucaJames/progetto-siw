@@ -13,7 +13,7 @@ public class FiltroAmministratore implements Filter {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpSession session = req.getSession();
 		if (session.getAttribute("amministratore")==null) {
-			RequestDispatcher rd  = this.application.getRequestDispatcher("/index.jsp");
+			RequestDispatcher rd  = this.application.getRequestDispatcher("/faces/permessoNegato.jsp");
 			rd.forward(request, response);	
 		}
 		else {

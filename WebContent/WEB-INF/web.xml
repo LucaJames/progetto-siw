@@ -23,24 +23,24 @@
 	 <!--  mapping filtri -->
 	<filter-mapping>
 		<filter-name>FiltroAmministratore</filter-name>
-		<url-pattern>/newEsame.jsp</url-pattern>
+		<url-pattern>/faces/newEsame.jsp</url-pattern>
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>FiltroAmministratore</filter-name>
-		<url-pattern>/newTipologia.jsp</url-pattern>
+		<url-pattern>/faces/newTipologia.jsp</url-pattern>
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>FiltroAmministratore</filter-name>
-		<url-pattern>/mostraEsamiMedico.jsp</url-pattern>
+		<url-pattern>/faces/mostraEsamiMedico.jsp</url-pattern>
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>FiltroAmministratore</filter-name>
-		<url-pattern>/homeAmministratore.jsp</url-pattern>
+		<url-pattern>/faces/homeAmministratore.jsp</url-pattern>
 	</filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>FiltroPaziente</filter-name>
-		<url-pattern>/homePaziente.jsp</url-pattern>
+		<url-pattern>/faces/homePaziente.jsp</url-pattern>
 	</filter-mapping>
 
 	
