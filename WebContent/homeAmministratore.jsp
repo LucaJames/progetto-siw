@@ -50,25 +50,16 @@
 			<div>
 				<h3>Operazioni Disponibili</h3>
 			</div>
-			<div>
-				<a href='<c:url value="/faces/newEsame.jsp" />'> Crea nuovo
-					esame </a>
-			</div>
-			<div>
-				<a href='<c:url value="/faces/newTipologia.jsp" />'> Inserisci
-					nuova tipologia di esame </a>
-			</div>
-			<div>
-				<a href='<c:url value="/faces/esamiMedico.jsp" />'> Visualizza
-					esami effettuati da un medico </a>
-			</div>
-			<div>
-				<a href='<c:url value="/faces/inserisciRisultati.jsp" />'>
-					Inserisci risultati </a>
-			</div>
-			<div>
-				<a href="<c:url value="/index.html" />"> Home </a>
-			</div>
+			<ul>
+				<li><a href='<c:url value="/faces/newEsame.jsp" />'> Crea
+						nuovo esame </a></li>
+				<li><a href='<c:url value="/faces/newTipologia.jsp" />'>
+						Inserisci nuova tipologia di esame </a></li>
+				<li><a href='<c:url value="/faces/esamiMedico.jsp" />'>
+						Visualizza esami effettuati da un medico </a></li>
+				<li><a href='<c:url value="/faces/inserisciRisultati.jsp" />'>
+						Inserisci risultati </a></li>
+			</ul>
 
 		</div>
 	</f:view>
