@@ -74,11 +74,11 @@
 						<h:message for="password" styleClass="error" />
 					</div>
 					<div>
-						<c:if test='${param["errore"] != null}'>
-							myFunction()
+						<c:if test='${param["loginError"] != null}'>
+							errorFunction()
 						</c:if>
 						<script>
-							function myFunction() {	alert("Combinazione utente e password errata");}
+							function errorFunction() {	alert("Combinazione utente e password errata");}
 						</script>
 					</div>
 					<div>

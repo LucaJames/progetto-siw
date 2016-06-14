@@ -9,7 +9,6 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.clinic.Amministratore;
-import it.uniroma3.clinic.Paziente;
 
 @Stateless
 public class AmministratoreFacade {
@@ -30,10 +29,10 @@ public class AmministratoreFacade {
 	            Query query = this.em.createQuery("SELECT a FROM Amministratore a WHERE a.username=:username");
 	            query.setParameter("username", username);
 	            a = (Amministratore) query.getSingleResult();
-
 	        }catch (Exception e){
 	            throw new Exception("Amministratore inesistente!");
 	        }
+	        
 	        if(!a.checkPassword(password))
 	            throw new Exception("Password non corretta!");
 
