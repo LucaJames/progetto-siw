@@ -37,6 +37,10 @@
 						<a class="navbar-brand" href="<c:url value="/index.html"/>">Clinica
 						</a>
 					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="<c:url value="/faces/homeAmministratore.jsp"/>">
+							Home Amministratore</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
 								Login Amministratore</a></li>
