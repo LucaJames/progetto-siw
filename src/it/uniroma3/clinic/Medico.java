@@ -71,6 +71,17 @@ public class Medico {
 	public void addEsame(Esame e){
 		this.esami.add(e);
 	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	
 	
 }

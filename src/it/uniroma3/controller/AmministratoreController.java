@@ -2,15 +2,18 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
 
 @ManagedBean(name = "amministratoreController")
+@SessionScoped
 public class AmministratoreController {
 
 	@ManagedProperty(value="#{param.id}")
@@ -27,10 +30,15 @@ public class AmministratoreController {
 	@EJB
 	private AmministratoreFacade amministratoreFacade;
 	
+	@PostConstruct
+	public void init(){
+		this.amministratori = amministratoreFacade.getAllAmministratori();
+	}
+	
 	public String loginAmministratore(){
 		try{
             this.amministratore = amministratoreFacade.checkPassword(this.username, this.password);
-			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("amministratore", amministratore);
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("amministratore", this.amministratore);
             return "homeAmministratore";
 
         }catch (Exception e){

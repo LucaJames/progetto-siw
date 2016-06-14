@@ -4,14 +4,19 @@ package it.uniroma3.controller;
 import java.util.List;
 
 
+
+
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
 
 @ManagedBean(name = "risultatoController")
+@SessionScoped
 public class RisultatoController {
 
 	@ManagedProperty(value="#{param.id}")
@@ -22,6 +27,11 @@ public class RisultatoController {
 	
 	@EJB
 	private RisultatoFacade risultatoFacade;
+	
+	@PostConstruct
+	public void init(){
+		this.risultati = risultatoFacade.getAllRisultati();
+	}
 
 	public String createRisultato(){
 		this.risultato = risultatoFacade.createRisultato(descrizione);

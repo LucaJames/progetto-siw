@@ -57,9 +57,9 @@
 			<ul>
 				<li>Lista Esami</li>
 
-				<c:forEach var="esame" items="#{pazienteController.esami}">
+				<c:forEach var="esame" items="#{pazienteController.esami}" converter="#{esameConverter}">
 					<li><h:form>
-							<h:commandLink value="#{esame.tipologia}"
+							<h:commandLink value="#{esameController.tipologia}"
 								action="#{esameController.find}" />
 							<f:param name="id" value="#{esame.id}" />
 						</h:form></li>
