@@ -7,13 +7,11 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
 
 @ManagedBean(name = "prerequisitoController")
-@SessionScoped
 public class PrerequisitoController {
 
 	@ManagedProperty(value="#{param.id}")

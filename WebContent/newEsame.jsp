@@ -51,7 +51,7 @@
 			<h2>Creazione Nuovo Esame</h2>
 			<h:form>
 				<div>
-					Tipologia Esame:
+					<strong>Tipologia Esame: </strong>
 					<h:selectOneMenu value="#{esameController.tipologia}"
 						converter="#{tipologiaEsameConverter}">
 						<f:selectItems value="#{tipologiaEsameController.tipologie}"
@@ -61,7 +61,7 @@
 				</div>
 			
 				<div>
-					Medico:
+					<strong>Medico: </strong>
 					<h:selectOneMenu value="#{esameController.medico}" converter="#{medicoConverter}">
 						<f:selectItems value="#{medicoController.medici}"
 							var="medico" itemValue="#{medico}"
@@ -69,12 +69,12 @@
 					</h:selectOneMenu>
 				</div>
 				<div>
-					Paziente:
+					<strong>Paziente: </strong>
 					<h:selectOneMenu value="#{esameController.paziente}"
 						converter="#{pazienteConverter}">
 						<f:selectItems value="#{pazienteController.pazienti}"
 							var="paziente" itemValue="#{paziente}"
-							itemLabel="#{paziente.username}" />
+							itemLabel="#{paziente.nome} #{paziente.cognome}" />
 					</h:selectOneMenu>
 				</div>
 				
