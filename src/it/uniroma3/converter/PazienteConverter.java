@@ -21,9 +21,17 @@ public class PazienteConverter implements Converter{
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String submittedValue) {
-        Paziente paziente = pazienteFacade.getPaziente(Long.valueOf(submittedValue));
-        return paziente;
+        if (submittedValue == null || submittedValue.isEmpty()) {
+            return null;
+        }
+
+        try {
+            return pazienteFacade.getPaziente(Long.valueOf(submittedValue));
+        } catch (NumberFormatException e) {
+            throw new ConverterException(new FacesMessage(String.format("%s is not a valid User ID", submittedValue)), e);
+        }
     }
+
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object modelValue) {
@@ -32,7 +40,7 @@ public class PazienteConverter implements Converter{
         }
 
         if (modelValue instanceof Paziente) {
-            return String.valueOf(((Paziente) modelValue).getUsername());
+            return String.valueOf(((Paziente) modelValue).getId());
         } else {
             throw new ConverterException(new FacesMessage(String.format("%s is not a valid Paziente", modelValue)));
         }
