@@ -1,8 +1,20 @@
 @CHARSET "UTF-8";
 
-#corpo{
+body{
+	background-color: #eee;
+}
+
+#corpo {
 	text-align: center;
 }
 
-#t_tipologie{
+#title {
+	text-align: center;
+	color: #3366ff;
+}
+
+#tabTipologie {
+	position: relative;
+	width: 20%;
+	left: 35%;
 }

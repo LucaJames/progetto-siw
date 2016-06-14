@@ -18,9 +18,8 @@
 	<f:view>
 		<div id="header">
 			<div class="jumbotron">
-				<h1 style="text-align: center; color: #3366ff">Best Clinic</h1>
-				<p style="text-align: center; color: #3366ff">Clinica
-					specializzata</p>
+				<h1 id="title">Best Clinic</h1>
+				<p id="title">Clinica specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"

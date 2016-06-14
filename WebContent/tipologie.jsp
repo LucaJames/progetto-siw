@@ -12,15 +12,14 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>List Tipologie</title>
+<title>Clinica-Tipologie</title>
 </head>
 <body>
 	<f:view>
 		<div id="header">
 			<div class="jumbotron">
-				<h1 style="text-align: center; color: #3366ff">Best Clinic</h1>
-				<p style="text-align: center; color: #3366ff">Clinica
-					specializzata</p>
+				<h1 id="title">Best Clinic</h1>
+				<p id="title">Clinica specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"
@@ -30,8 +29,6 @@
 					alt="testo"
 					style="position: absolute; left: 75%; bottom: 70%; width: 12%">
 			</div>
-
-
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -46,12 +43,11 @@
 			</nav>
 		</div>
 		<div id="corpo">
-			<table id="t_tipologie">
+			<table id="tabTipologie">
 				<tr>
 					<th><h4>Tipi di esami dispinibili</h4></th>
 				</tr>
-				<tr>&nbsp
-				</tr>
+				<tr>&nbsp</tr>
 				<tr>
 					<th>Nome</th>
 					<th>Prezzo</th>

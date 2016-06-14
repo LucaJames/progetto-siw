@@ -12,14 +12,15 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Nuovo Paziente</title>
+<title>Clinica-Dettaglio Esame</title>
 </head>
 <body>
 	<f:view>
 		<div id="header">
 			<div class="jumbotron">
 				<h1 id="title">Best Clinic</h1>
-				<p id="title">Clinica specializzata</p>
+				<p id="title">Clinica
+					specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"
@@ -29,13 +30,16 @@
 					alt="testo"
 					style="position: absolute; left: 75%; bottom: 70%; width: 12%">
 			</div>
-
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a class="navbar-brand" href="<c:url value="/index.html"/>">Clinica
 						</a>
 					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="<c:url value="/faces/homePaziente.jsp"/>">
+							Home Paziente</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
 								Login Amministratore</a></li>
@@ -44,36 +48,12 @@
 			</nav>
 		</div>
 		<div id="corpo">
-			<h2>Creazione nuovo profilo paziente</h2>
-			<h:form>
-				<div>
-					Name:
-					<h:inputText value="#{pazienteController.nome}" required="true"
-						requiredMessage="Nome Obbligatorio" id="nome" />
-					<strong><h:message for="nome" /></strong>
-				</div>
-				<div>
-					Cognome:
-					<h:inputText value="#{pazienteController.cognome}" required="true"
-						requiredMessage="Cognome Obbligatorio" id="cognome" />
-					<strong><h:message for="cognome" /></strong>
-				</div>
-				<div>
-					Username:
-					<h:inputText value="#{pazienteController.username}" required="true"
-						requiredMessage="Username Obbligatorio" id="username" />
-					<strong><h:message for="username" /></strong>
-				</div>
-				<div>
-					Password:
-					<h:inputSecret value="#{pazienteController.password}"
-						required="true" requiredMessage="Password Obbligatoria"
-						id="password" />
-					<strong><h:message for="password" /></strong>
-				</div>
-				<h:commandButton value="Invia"
-					action="#{pazienteController.createPaziente}" />
-			</h:form>
+		<h2>Dettaglio Esame</h2>
+		<div><strong>Tipologia Esame: </strong>${esameController.esame.tipologia}</div>
+			<div><strong>Data Prenotazione: </strong>${esameController.esame.dataPrenotazione}</div>
+			<div><strong>Data Svolgimento: </strong>${esameController.esame.dataSvolgimento}</div>
+			<div><strong>Medico: </strong>${esameController.esame.medico}</div>
+		
 		</div>
 	</f:view>
 </body>
