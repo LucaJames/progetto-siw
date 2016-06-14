@@ -65,11 +65,11 @@ public class PazienteController {
 		return "paziente";
 	}
 	
-	public String findEsamiPazienteByID(){
+	public String findEsamePazienteByID(){
 		this.esami = pazienteFacade.getEsamiPaziente(id);
 		return "esami";
 	}	
-
+	
 	public Long getId() {
 		return id;
 	}

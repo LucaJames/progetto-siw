@@ -49,8 +49,8 @@
 		</div>
 		<div id="corpo">
 			<h2>Home Page Amministratore</h2>
-			<div><h3><strong>${amministratoreController.amministratore.nome}</strong>&nbsp
-				<strong>${amministratoreController.amministratore.cognome}</strong></h3>
+			<div><h3><strong>${amministratore.nome}</strong>
+				<strong>${amministratore.cognome}</strong></h3>
 			</div>
 			<div>
 				<strong>Operazioni Disponibili</strong>

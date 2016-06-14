@@ -43,14 +43,11 @@
 			</nav>
 		</div>
 		<div id="corpo">
+			<h2>Tipi di esami dispinibili</h2>
 			<table id="tabTipologie">
 				<tr>
-					<th><h4>Tipi di esami dispinibili</h4></th>
-				</tr>
-				<tr>&nbsp</tr>
-				<tr>
-					<th>Nome</th>
-					<th>Prezzo</th>
+					<td><strong>Nome</strong></td>
+					<td><strong>Prezzo</strong></td>
 				</tr>
 				<c:forEach var="tip" items="#{tipologiaEsameController.tipologie}">
 					<tr>

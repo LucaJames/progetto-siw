@@ -50,16 +50,18 @@
 		
 		<div id="corpo">
 			<h2>Homepage Paziente</h2>
-			<div>Nome: ${pazienteController.paziente.nome}</div>
-			<div>Cognome: ${pazienteController.paziente.cognome}</div>
+			<div><strong>Nome: </strong>${pazienteController.paziente.nome}</div>
+			<div><strong>Cognome: </strong>${pazienteController.paziente.cognome}</div>
 			<hr />
 			<div>Esami Effettutati</div>
 			<ul>
 				<li>Lista Esami</li>
-
-				<c:forEach var="esame" items="#{pazienteController.esami}" converter="#{esameConverter}">
+				<c:forEach var="esame" 
+					items="#{pazienteController.esami}" >
 					<li><h:form>
-							<h:commandLink value="#{esameController.tipologia}"
+							<h:commandLink 
+								value="#{esame.tipologia.nome}"
+								converter="#{pazienteConverter}"
 								action="#{esameController.find}" />
 							<f:param name="id" value="#{esame.id}" />
 						</h:form></li>
