@@ -10,7 +10,6 @@
 <style type="text/css">
 	<%@ include file="bootstrap/css/bootstrap.css" %>
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
-	<%@ include file="styleSheets/style.css" %>
 </style>
 <script type=”text/javascript” src=”bootstrap/js/bootstrap.min.js”></script>
 <title>Clinica</title>
