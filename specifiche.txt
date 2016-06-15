@@ -1,0 +1,16 @@
+PARTECIPANTI:
+Fabrizio Cicala
+Luca Perini
+Daniel Spizzichino
+
+TECNOLOGIE UTILIZZATE:
+-Bootstrap
+-Hibernate
+-JSF
+
+CASI D'USO TRATTATI:
+1)CONSULTA OFFERTA: Un utente non registrato può visualizzare le tipologie di esame offerte dalla clinica e dalla homepage può inserire i suoi dati per iscriversi.
+2)CREA ESAME: L'amministratore, una volta effettuato il login, può creare un nuovo esame specificando paziente,tipologia e medico
+3)INSERIMENTO TIPOLOGIA ESAME: L'amministratore, una volta effettuato il login, può creare una nuova tipologia di esame specificando nome,prezzo e descrizione e associando ad essa una lista di prerequisiti
+4)ESAMI EFFETTUATI DA UN MEDICO: L'amministratore può visualizzare gli esami specifici effettuati da un medico, previo login
+5)ESAMI EFFETTUATI DA UN PAZIENTE: Il paziente verifica gli esami da lui sostenuti, previo login
