@@ -47,7 +47,7 @@ public class MedicoController {
 		return "medico";
 	}
 	
-	public String findEsamiMedicoByID(){
+	public String listEsamiMedico(){
 		this.esami = medicoFacade.getEsamiMedico(id);
 		return "esamiMedico";
 	}
