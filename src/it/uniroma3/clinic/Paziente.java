@@ -27,7 +27,7 @@ public class Paziente {
 	private String username;
 	@Column(nullable = false)
 	private String password;
-	@OneToMany(mappedBy = "paziente", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "paziente")
 	private List<Esame> esami;
 	
 	public Paziente(){}

@@ -12,7 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import it.uniroma3.clinic.Prerequisito;
 import it.uniroma3.clinic.TipologiaEsame;
 
-@Stateless
+@Stateless(name="tipologiaEsameFacade")
 public class TipologiaEsameFacade {
 	
 	@PersistenceContext(unitName = "exams-unit")
@@ -30,20 +30,8 @@ public class TipologiaEsameFacade {
 	}
 	
 	public List<Prerequisito> addPrerequisito(TipologiaEsame tipologiaEsame, Prerequisito prerequisitoEsame) {
-//		List<Prerequisito> prerequisitiEsame = tipologiaEsame.getPrerequisiti();
-//		System.out.println("LISTA PREREQ PRESA");
-//		if (prerequisitiEsame==null) {
-//			System.out.println("LISTA PREREQ NULL");
-//		} else {
-//			System.out.println("ELEMENTI LISTA PREREQ: " + prerequisitiEsame.size());
-//		}
-//		prerequisitiEsame.add(prerequisitoEsame);
-//		System.out.println("PREREQ AGGIUNTO ALLA LISTA PRESA");
-//		tipologiaEsame.setPrerequisitiEsame(prerequisitiEsame);
-//		System.out.println("LISTA PREREQ SETTATA");
-//		//this.updateTipologiaEsame(tipologiaEsame);
-//		//System.out.println("TIPOLOGIA PREREQ AGGIORNATA");
 		tipologiaEsame.addPrerequisito(prerequisitoEsame);
+		em.merge(tipologiaEsame);
 		return tipologiaEsame.getPrerequisiti();
 	}
 	
@@ -68,7 +56,7 @@ public class TipologiaEsameFacade {
 	}
 
 	public List<Prerequisito> listPrerequisiti(Long id) {
-		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM prerequisito p WHERE p.prequerisiti_tipologia = :tip", Prerequisito.class);
+		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM Prerequisito p WHERE p.tipologia_id = :tip", Prerequisito.class);
 		q.setParameter("tip", id);
 		List<Prerequisito> listPrerequisiti = q.getResultList();
 		return listPrerequisiti;

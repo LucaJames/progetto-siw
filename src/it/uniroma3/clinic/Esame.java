@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,15 +28,15 @@ public class Esame {
 	private Date dataPrenotazione;
 	@Column(nullable = true)
 	private Date dataSvolgimento;
-	@OneToOne
-	@JoinColumn(name = "tipologia")
+	@OneToOne(cascade = {CascadeType.PERSIST})
+	@JoinColumn
 	private TipologiaEsame tipologia;
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST})
 	@JoinColumn(name = "risultati_esame")
 	private Map<String,Risultato> risultati = new HashMap<>();
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.PERSIST})
 	private Paziente paziente;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.PERSIST})
 	private Medico medico;
 	
 	public Esame(){}
