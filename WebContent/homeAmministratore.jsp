@@ -58,8 +58,8 @@
 			<div><a href='<c:url value="/faces/newTipologia.jsp" />'>
 					Inserisci nuova tipologia di esame </a></div>
 			<div><h:form>
-				<h:commandLink value="Visualizza esami effettuati da un medico" 
-					action="#{medicoController.findEsamiMedicoByID}"/>
+				<h:commandLink action="#{medicoController.listMedici}"
+					value="Visualizza esami effettuati da un medico"/>
 				</h:form></div>		
 			<div><a href='<c:url value="#" />'> Inserisci risultati </a></div>
 		</div>
