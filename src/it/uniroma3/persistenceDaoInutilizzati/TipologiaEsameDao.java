@@ -1,8 +1,6 @@
-package it.uniroma3.persistence;
+package it.uniroma3.persistenceDaoInutilizzati;
 
-
-
-import it.uniroma3.clinic.Paziente;
+import it.uniroma3.clinic.TipologiaEsame;
 
 import java.util.List;
 
@@ -10,29 +8,29 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-public class PazienteDao extends Dao<Paziente>{
+public class TipologiaEsameDao extends Dao<TipologiaEsame>{
+
 	
-	
-	public PazienteDao(EntityManagerFactory emf){
+	public TipologiaEsameDao(EntityManagerFactory emf){
 		super(emf);
 	}
 	
 	@Override
-	public Paziente findById(long id){
+	public TipologiaEsame findById(long id){
 		EntityManager em = this.emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		Paziente p = em.find(Paziente.class, id);
+		TipologiaEsame te = em.find(TipologiaEsame.class, id);
 		tx.commit();
 		em.close();
-		return p;
+		return te;
 	}
 	
 	@Override
-	public List<Paziente> findAll(){
+	public List<TipologiaEsame> findAll(){
 		EntityManager em = this.emf.createEntityManager();
 		@SuppressWarnings("unchecked")
-		List<Paziente> result = em.createNamedQuery("Paziente.findAll").getResultList();
+		List<TipologiaEsame> result = em.createNamedQuery("TipologiaEsame.findAll").getResultList();
 		em.close();
 		return result;			
 	}
@@ -42,3 +40,4 @@ public class PazienteDao extends Dao<Paziente>{
 	
 
 }
+

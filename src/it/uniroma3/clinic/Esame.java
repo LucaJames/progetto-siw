@@ -29,10 +29,9 @@ public class Esame {
 	@Column(nullable = true)
 	private Date dataSvolgimento;
 	@OneToOne(cascade = {CascadeType.PERSIST})
-	@JoinColumn
 	private TipologiaEsame tipologia;
 	@OneToMany(cascade = {CascadeType.PERSIST})
-	@JoinColumn(name = "risultati_esame")
+	@JoinColumn(name = "esame_id")
 	private Map<String,Risultato> risultati = new HashMap<>();
 	@ManyToOne(cascade = {CascadeType.PERSIST})
 	private Paziente paziente;

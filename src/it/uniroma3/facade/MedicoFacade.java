@@ -37,7 +37,7 @@ public class MedicoFacade {
 	
 	public List<Esame> getEsamiMedico(Long id){
 		String m = id.toString();
-		TypedQuery<Esame> q = em.createQuery("SELECT * FROM Esame e WHERE e.medico = ?", Esame.class);
+		TypedQuery<Esame> q = em.createQuery("SELECT e FROM Esame e WHERE e.medico = ?", Esame.class);
 		q.setParameter(1, m);
 		List<Esame> esamiMedico = q.getResultList();
 		return esamiMedico;

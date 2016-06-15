@@ -23,9 +23,8 @@ public class AmministratoreController {
 	private Amministratore amministratore;
 	private List<Amministratore> amministratori;
 	private String message;
-	private String errore = null;
-
-
+	private String errore = null;;
+	
 	@EJB
 	private AmministratoreFacade amministratoreFacade;
 	

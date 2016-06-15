@@ -52,20 +52,16 @@
 			<div><h3><strong>${amministratore.nome}</strong>
 				<strong>${amministratore.cognome}</strong></h3>
 			</div>
-			<div>
-				<strong>Operazioni Disponibili</strong>
-			</div>
-			<ul>
-				<li><a href='<c:url value="/faces/newEsame.jsp" />'> Crea
-						nuovo esame </a></li>
-				<li><a href='<c:url value="/faces/newTipologia.jsp" />'>
-						Inserisci nuova tipologia di esame </a></li>
-				<li><a href='<c:url value="#" />'>
-						Visualizza esami effettuati da un medico </a></li>
-				<li><a href='<c:url value="#" />'>
-						Inserisci risultati </a></li>
-			</ul>
-
+			<div><strong>Operazioni Disponibili</strong></div>
+			<div><a href='<c:url value="/faces/newEsame.jsp" />'> Crea
+					nuovo esame </a></div>
+			<div><a href='<c:url value="/faces/newTipologia.jsp" />'>
+					Inserisci nuova tipologia di esame </a></div>
+			<div><h:form>
+				<h:commandLink value="Visualizza esami effettuati da un medico" 
+					action="#{medicoController.findEsamiMedicoByID}"/>
+				</h:form></div>		
+			<div><a href='<c:url value="#" />'> Inserisci risultati </a></div>
 		</div>
 	</f:view>
 </body>

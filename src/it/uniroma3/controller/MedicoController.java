@@ -49,7 +49,7 @@ public class MedicoController {
 	
 	public String findEsamiMedicoByID(){
 		this.esami = medicoFacade.getEsamiMedico(id);
-		return "esami";
+		return "esamiMedico";
 	}
 
 	public Long getId() {

@@ -1,6 +1,6 @@
-package it.uniroma3.persistence;
+package it.uniroma3.persistenceDaoInutilizzati;
 
-import it.uniroma3.clinic.Prerequisito;
+import it.uniroma3.clinic.Risultato;
 
 import java.util.List;
 
@@ -8,26 +8,26 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
-public class PrerequisitoDao extends Dao<Prerequisito>{
+public class RisultatoDao extends Dao<Risultato>{
 	
 	
-	public PrerequisitoDao(EntityManagerFactory emf){
+	public RisultatoDao(EntityManagerFactory emf){
 		super(emf);
 	}
 	
 	@Override
-	public Prerequisito findById(long id){
+	public Risultato findById(long id){
 		EntityManager em = this.emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		Prerequisito p = em.find(Prerequisito.class, id);
+		Risultato r = em.find(Risultato.class, id);
 		tx.commit();
 		em.close();
-		return p;
+		return r;
 	}
 	
 	@Override
-	public List<Prerequisito> findAll(){
+	public List<Risultato> findAll(){
 		return null;			
 	}
 	
@@ -36,4 +36,3 @@ public class PrerequisitoDao extends Dao<Prerequisito>{
 	
 
 }
-
