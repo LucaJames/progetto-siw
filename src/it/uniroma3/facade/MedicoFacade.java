@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
@@ -35,12 +36,15 @@ public class MedicoFacade {
 		return medici;
 	}
 	
-	public List<Esame> getEsamiMedico(Long id){
-		String m = id.toString();
-		TypedQuery<Esame> q = em.createQuery("SELECT e FROM Esame e WHERE e.medico = ?", Esame.class);
-		q.setParameter(1, m);
-		List<Esame> esamiMedico = q.getResultList();
-		return esamiMedico;
+
+	@SuppressWarnings("unchecked")
+	public List<Esame> getEsamiMedicoById(Long id){
+		Query q = em.createNativeQuery("select esame.id, esame.medico_id, esame.dataPrenotazione, esame.dataSvolgimento, esame.paziente_id, esame.tipologia_id"
+				+ " from medico join esame on medico.id = medico_id"
+				+ " where medico.id = ? ", Esame.class);
+		q.setParameter(1, id);
+		List<Esame> esami= q.getResultList();
+		return esami;
 	}
 	
 	public void updateMedico(Medico m){
