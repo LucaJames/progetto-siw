@@ -5,6 +5,8 @@ import java.util.List;
 
 
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,11 +29,11 @@ public class TipologiaEsame {
 	private String descrizione;
 	@Column(nullable = false)
 	private Float price;
-	@OneToMany
-	@JoinColumn(name = "tipologia")
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@JoinColumn(name = "tipologia_id")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
-	@JoinColumn(name = "tipologia")
+	@JoinColumn(name = "risultati_tipologia")
 	private List<Risultato> risultati;
 	
 	public TipologiaEsame(){}

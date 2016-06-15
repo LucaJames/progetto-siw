@@ -28,7 +28,7 @@ public class TipologiaEsameController {
 	private String noPrerequisiti = null;
 
 
-	@EJB
+	@EJB(beanName="tipologiaEsameFacade")
 	private TipologiaEsameFacade tipologiaEsameFacade;
 
 	@PostConstruct

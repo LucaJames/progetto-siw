@@ -22,6 +22,7 @@ public class PrerequisitoController {
 	private Prerequisito prerequisito;
 	private List<Prerequisito> prerequisiti;
 	private TipologiaEsame tipologia;
+	private String status = null;
 
 	@EJB
 	private PrerequisitoFacade prerequisitoFacade;
@@ -38,6 +39,7 @@ public class PrerequisitoController {
 		this.prerequisito = prerequisitoFacade.createPrerequisito(nome, valore);
 		tipologia = (TipologiaEsame) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("tipologia");
 		this.tipologiaEsameFacade.addPrerequisito(tipologia, this.prerequisito);
+		status = "Prerequisito aggiunto all'a tipologia esame";
 		return "inserisciPrerequisito";
 	}
 	
@@ -100,6 +102,14 @@ public class PrerequisitoController {
 
 	public void setTipologia(TipologiaEsame tipologia) {
 		this.tipologia = tipologia;
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

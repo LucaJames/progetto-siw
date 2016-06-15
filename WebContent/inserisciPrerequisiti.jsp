@@ -65,6 +65,7 @@
 						required="true" requiredMessage="Valore prerequisito obbligatorio" 
 						id="valore" />
 					<div><h:message for="valore" /></div>
+					<div>${prerequisitoController.status}</div>
 				</div>
 				<h:commandButton value="Aggiungi"
 					action="#{prerequisitoController.createPrerequisito}" />
