@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
@@ -16,12 +17,17 @@ public class PrerequisitoController {
 
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
-	private String descrizione;
+	private String nome;
+	private String valore;
 	private Prerequisito prerequisito;
 	private List<Prerequisito> prerequisiti;
-	
+	private TipologiaEsame tipologia;
+
 	@EJB
 	private PrerequisitoFacade prerequisitoFacade;
+	
+	@EJB
+	private TipologiaEsameFacade tipologiaEsameFacade;
 	
 	@PostConstruct
 	public void init(){
@@ -29,8 +35,10 @@ public class PrerequisitoController {
 	}
 
 	public String createPrerequisito(){
-		this.prerequisito = prerequisitoFacade.createPrerequisito(descrizione);
-		return "prerequisito";
+		this.prerequisito = prerequisitoFacade.createPrerequisito(nome, valore);
+		tipologia = (TipologiaEsame) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("tipologia");
+		this.tipologiaEsameFacade.addPrerequisito(tipologia, this.prerequisito);
+		return "inserisciPrerequisito";
 	}
 	
 
@@ -54,35 +62,44 @@ public class PrerequisitoController {
 		this.id = id;
 	}
 
-
-	public String getDescrizione() {
-		return descrizione;
+	public String getNome() {
+		return nome;
 	}
-
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-
+	
+	public String getValore() {
+		return valore;
+	}
+	
+	public void setValore(String valore) {
+		this.valore = valore;
+	}
 
 	public Prerequisito getPrerequisito() {
 		return prerequisito;
 	}
 
-
 	public void setPrerequisito(Prerequisito prerequisito) {
 		this.prerequisito = prerequisito;
 	}
-
 
 	public List<Prerequisito> getPrerequisiti() {
 		return prerequisiti;
 	}
 
-
 	public void setPrerequisiti(List<Prerequisito> prerequisiti) {
 		this.prerequisiti = prerequisiti;
 	}
 	
+	public TipologiaEsame getTipologia() {
+		return tipologia;
+	}
+
+	public void setTipologia(TipologiaEsame tipologia) {
+		this.tipologia = tipologia;
+	}
 	
 }

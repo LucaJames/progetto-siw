@@ -70,13 +70,7 @@
 						required="true" requiredMessage="Username Obbligatorio" id="price" />
 					<strong><h:message for="price" /></strong>
 				</div>
-				<div>
-					<strong>Prerequisito: </strong>
-					<h:inputText
-						value="#{tipologiaEsameController.descrizionePrerequisito}"
-						id="prerequisito" />
-					<strong><h:message for="prerequisito" /></strong>
-				</div>
+				
 				<h:commandButton value="Invia"
 					action="#{tipologiaEsameController.createTipologiaEsame}" />
 			</h:form>

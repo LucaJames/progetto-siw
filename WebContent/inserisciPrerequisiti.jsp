@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Clinic-Nuovo Paziente</title>
+<title>Clinic-Inserisci Prerequisito</title>
 </head>
 <body>
 	<f:view>
@@ -36,6 +36,10 @@
 						<a class="navbar-brand" href="<c:url value="/index.html"/>">Clinica
 						</a>
 					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="<c:url value="/faces/homeAmministratore.jsp"/>">
+								Home Amministratore</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/faces/loginAmministratore.jsp"/>">
 								Login Amministratore</a></li>
@@ -44,37 +48,27 @@
 			</nav>
 		</div>
 		<div id="corpo">
-			<h2>Creazione nuovo profilo paziente</h2>
 			<h:form>
+				<h3><strong>Inserisci nuovo prerequisito alla tipologia esame
+					creata</strong></h3>
+				<div><h3><strong>Tipologia Esame: ${tipologia.nome}</strong></h3></div>
 				<div>
-					<strong>Name: </strong>
-					<h:inputText value="#{pazienteController.nome}" required="true"
-						requiredMessage="Nome Obbligatorio" id="nome" />
+					<strong>Nome Prerequisito: </strong>
+					<h:inputText value="#{prerequisitoController.nome}"
+						required="true" requiredMessage="Nome prerequisito obbligatorio" 
+						id="nome" />
 					<strong><h:message for="nome" /></strong>
 				</div>
 				<div>
-					<strong>Cognome: </strong>
-					<h:inputText value="#{pazienteController.cognome}" required="true"
-						requiredMessage="Cognome Obbligatorio" id="cognome" />
-					<strong><h:message for="cognome" /></strong>
+					<strong>Valore: </strong>
+					<h:inputText value="#{prerequisitoController.valore}" 
+						required="true" requiredMessage="Valore prerequisito obbligatorio" 
+						id="valore" />
+					<strong><h:message for="valore" /></strong>
 				</div>
-				<div>
-					<strong>Username: </strong>
-					<h:inputText value="#{pazienteController.username}" required="true"
-						requiredMessage="Username Obbligatorio" id="username" />
-					<strong><h:message for="username" /></strong>
-				</div>
-				<div>
-					<strong>Password: </strong>
-					<h:inputSecret value="#{pazienteController.password}"
-						required="true" requiredMessage="Password Obbligatoria"
-						id="password" />
-					<strong><h:message for="password" /></strong>
-				</div>
-				<h:commandButton value="Invia"
-					action="#{pazienteController.createPaziente}" />
+				<h:commandButton value="Aggiungi"
+					action="#{prerequisitoController.createPrerequisito}" />
 			</h:form>
-			<div>${pazienteController.creato}</div>
 		</div>
 	</f:view>
 </body>

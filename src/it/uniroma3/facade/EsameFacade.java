@@ -55,10 +55,9 @@ import javax.persistence.criteria.CriteriaQuery;
 
 
 		public List<Esame> getEsamiPaziente(Long id) {
-			
-			String p = id.toString();
-			TypedQuery<Esame> q = em.createQuery("SELECT * FROM Esame e WHERE e.paziente = ?", Esame.class);
-			q.setParameter(1, p);
+			//String p = id.toString();
+			TypedQuery<Esame> q = em.createQuery("SELECT e FROM Esame e WHERE e.paziente = ?", Esame.class);
+			q.setParameter(1, id);
 			List<Esame> esamiPaziente = q.getResultList();
 			return esamiPaziente;
 			

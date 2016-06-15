@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 
 import it.uniroma3.clinic.*;
 import it.uniroma3.facade.*;
@@ -37,10 +38,9 @@ public class TipologiaEsameController {
 	public String createTipologiaEsame() {
 
 		this.tipologia = new TipologiaEsame(this.nome, this.descrizione, this.price);
-		this.prerequisito = new Prerequisito(this.descrizionePrerequisito);
-		this.prerequisiti = tipologiaEsameFacade.addPrerequisito(this.tipologia, this.prerequisito);
 		this.tipologia = tipologiaEsameFacade.createTipologiaEsame(nome, descrizione, price);
-		return "newTipologiaEsame";
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("tipologia", this.tipologia);
+		return "inserisciPrerequisiti";
 	}
 
 	public String listTipologiaEsame(){

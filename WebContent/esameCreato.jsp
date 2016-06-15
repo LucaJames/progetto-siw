@@ -7,12 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	<%@ include file="bootstrap/css/bootstrap.css" %>
+	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
+	<%@ include file="styleSheets/style.css" %>
+</style>
 <title>Clinica-Esame</title>
 </head>
 <body>
 <f:view>
 	<h2>Esame appena creato</h2>
-	<div><strong>Tipologia Esame: </strong>${esameController.esame.tipologia} </div>
+	<div><strong>Tipologia Esame: </strong>${esameController.esame.tipologia.nome} </div>
 	<div><strong>Medico: </strong>${esameController.esame.medico.nome} ${esameController.esame.medico.cognome}</div>
 	<div><strong>Paziente: </strong>${esameController.esame.paziente.nome} ${esameController.esame.paziente.cognome}</div> 
 </f:view>

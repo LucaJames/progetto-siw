@@ -15,20 +15,31 @@ public class Prerequisito {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(nullable = false)
-	private String descrizione;
+	private String nome;
+	@Column(nullable = false)
+	private String valore;
 	
 	public Prerequisito(){}
 	
-	public Prerequisito(String descrizione){
-		this.descrizione = descrizione;
+	public Prerequisito(String nome, String valore){
+		this.nome = nome;
+		this.valore = valore;
 	}
 	
-	public String getDescrizione() {
-		return descrizione;
+	public String getNome() {
+		return nome;
 	}
 	
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-
+	
+	public String getValore() {
+		return valore;
+	}
+	
+	public void setValore(String valore) {
+		this.valore = valore;
+	}
+	
 }

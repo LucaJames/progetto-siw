@@ -7,6 +7,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	<%@ include file="bootstrap/css/bootstrap.css" %>
+	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
+	<%@ include file="styleSheets/style.css" %>
+</style>
 <title>Clinica-Dettagli Esame</title>
 </head>
 <body>

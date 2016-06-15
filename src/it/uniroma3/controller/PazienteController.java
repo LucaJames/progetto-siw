@@ -26,7 +26,7 @@ public class PazienteController {
 	private String message;
 	private String errore = null;
 	private String noEsami = null;
-	
+	private String creato = null;
 
 	@ManagedProperty(value="#{esameController}")
 	public EsameController esameController;
@@ -71,6 +71,7 @@ public class PazienteController {
 	
 	public String createPaziente(){
 		this.paziente = pazienteFacade.createPaziente(nome, cognome, username, password);
+		this.creato = "Utente Creato";
 		return "newPaziente";
 	}
 	
@@ -171,5 +172,12 @@ public class PazienteController {
 		this.noEsami = noEsami;
 	}
 	
+	public String getCreato() {
+		return creato;
+	}
+
+	public void setCreato(String creato) {
+		this.creato = creato;
+	}
 	
 }
