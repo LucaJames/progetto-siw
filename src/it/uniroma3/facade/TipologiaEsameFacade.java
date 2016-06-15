@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.clinic.Prerequisito;
@@ -63,5 +65,12 @@ public class TipologiaEsameFacade {
 	public void deleteTipologiaEsame(Long id){
 		TipologiaEsame tipEsame = em.find(TipologiaEsame.class, id);
 		deleteTipologiaEsame(tipEsame);
+	}
+
+	public List<Prerequisito> listPrerequisiti(Long id) {
+		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM prerequisito p WHERE p.prequerisiti_tipologia = :tip", Prerequisito.class);
+		q.setParameter("tip", id);
+		List<Prerequisito> listPrerequisiti = q.getResultList();
+		return listPrerequisiti;
 	}
 }

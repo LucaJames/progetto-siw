@@ -25,6 +25,7 @@ public class TipologiaEsameController {
 	private List<Prerequisito> prerequisiti;
 	private TipologiaEsame tipologia;
 	private List<TipologiaEsame> tipologie;
+	private String noPrerequisiti = null;
 
 
 	@EJB
@@ -51,6 +52,13 @@ public class TipologiaEsameController {
 	public String findTipologia(){
 		this.tipologia = tipologiaEsameFacade.getTipologiaEsame(id);
 		return "tipologia";
+	}
+	
+	public String listPrerequisiti() {
+		prerequisiti = tipologiaEsameFacade.listPrerequisiti(id);
+		if(prerequisiti.size()==0)
+			noPrerequisiti = "Non sono previsti prerequisiti per questo tipo di esame";
+		return "prerequisitiTipologia";
 	}
 
 
@@ -151,6 +159,14 @@ public class TipologiaEsameController {
 
 	public void setDescrizionePrerequisito(String descrizionePrerequisito) {
 		this.descrizionePrerequisito = descrizionePrerequisito;
+	}
+
+	public String getNoPrerequisiti() {
+		return noPrerequisiti;
+	}
+
+	public void setNoPrerequisiti(String noPrerequisiti) {
+		this.noPrerequisiti = noPrerequisiti;
 	}
 
 }
