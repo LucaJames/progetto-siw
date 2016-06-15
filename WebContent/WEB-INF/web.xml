@@ -8,7 +8,7 @@
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- definizione filtri -->
 	<filter>
 		<filter-name>FiltroAmministratore</filter-name>
@@ -20,7 +20,9 @@
 		<filter-class>it.uniroma3.filter.FiltroPaziente</filter-class>
 	</filter>
 
-	 <!--  mapping filtri -->
+	<!-- mapping filtri -->
+	
+	<!-- Filtro Amministratore -->
 	<filter-mapping>
 		<filter-name>FiltroAmministratore</filter-name>
 		<url-pattern>/faces/newEsame.jsp</url-pattern>
@@ -37,13 +39,29 @@
 		<filter-name>FiltroAmministratore</filter-name>
 		<url-pattern>/faces/homeAmministratore.jsp</url-pattern>
 	</filter-mapping>
-	
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/faces/inserisciPrerequisiti.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroAmministratore</filter-name>
+		<url-pattern>/faces/esameCreato.jsp</url-pattern>
+	</filter-mapping>
+
+	<!-- Filtro Paziente -->
 	<filter-mapping>
 		<filter-name>FiltroPaziente</filter-name>
 		<url-pattern>/faces/homePaziente.jsp</url-pattern>
 	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroPaziente</filter-name>
+		<url-pattern>/faces/esamiPaziente.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>FiltroPaziente</filter-name>
+		<url-pattern>/faces/esame.jsp</url-pattern>
+	</filter-mapping>
 
-	
 
 	<!-- Servlet configuration -->
 	<servlet>

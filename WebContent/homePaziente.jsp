@@ -50,8 +50,8 @@
 		
 		<div id="corpo">
 			<h2>Homepage Paziente</h2>
-			<div><strong>Nome: </strong>${pazienteController.paziente.nome}</div>
-			<div><strong>Cognome: </strong>${pazienteController.paziente.cognome}</div>
+			<div><strong>Nome: </strong>${paziente.nome}</div>
+			<div><strong>Cognome: </strong>${paziente.cognome}</div>
 			<div>
 				<h:form>
 				<h:commandLink 

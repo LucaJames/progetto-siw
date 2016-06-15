@@ -58,7 +58,7 @@
 						</h:form></li>
 				</c:forEach>
 			</ul>
-			<div>${pazienteController.noEsami}</div>
+			<div>${pazienteController.numeroEsami}</div>
 
 		</div>
 	</f:view>

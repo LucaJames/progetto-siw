@@ -25,7 +25,7 @@ public class PazienteController {
 	private List<Paziente> pazienti;
 	private String message;
 	private String errore = null;
-	private String noEsami = null;
+	private String numeroEsami = null;
 	private String creato = null;
 
 	@ManagedProperty(value="#{esameController}")
@@ -88,7 +88,7 @@ public class PazienteController {
 	public String listEsamiPaziente(){
 		this.esami = pazienteFacade.getEsamiPaziente(id);
 		if(esami.size()==0)
-			noEsami = "Esami sostenuti: " + esami.size();
+			this.numeroEsami = "Esami sostenuti: " + esami.size();
 		return "esamiPaziente";
 	}	
 	
@@ -164,12 +164,12 @@ public class PazienteController {
 		this.errore = errore;
 	}
 
-	public String getNoEsami() {
-		return noEsami;
+	public String getNumeroEsami() {
+		return numeroEsami;
 	}
 
-	public void setNoEsami(String noEsami) {
-		this.noEsami = noEsami;
+	public void setNumeroEsami(String noEsami) {
+		this.numeroEsami = noEsami;
 	}
 	
 	public String getCreato() {
