@@ -13,7 +13,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Nuova Tipologia</title>
+<title>Clinica-Nuova Tipologia</title>
 </head>
 <body>
 	<f:view>
@@ -55,20 +55,20 @@
 					<strong>Nome: </strong>
 					<h:inputText value="#{tipologiaEsameController.nome}"
 						required="true" requiredMessage="Nome Obbligatorio" id="nome" />
-					<strong><h:message for="nome" /></strong>
+					<div><h:message for="nome" /></div>
 				</div>
 				<div>
 					<strong>Descrizione: </strong>
 					<h:inputText value="#{tipologiaEsameController.descrizione}"
 						required="true" requiredMessage="Descrizione Obbligatoria"
 						id="descrizione" />
-					<strong><h:message for="descrizione" /></strong>
+					<div><h:message for="descrizione" /></div>
 				</div>
 				<div>
 					<strong>Prezzo: </strong>
 					<h:inputText value="#{tipologiaEsameController.price}"
 						required="true" requiredMessage="Username Obbligatorio" id="price" />
-					<strong><h:message for="price" /></strong>
+					<div><h:message for="price" /></div>
 				</div>
 				
 				<h:commandButton value="Invia"

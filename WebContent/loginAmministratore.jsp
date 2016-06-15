@@ -13,7 +13,7 @@
 	<%@ include file="styleSheets/style.css" %>
 </style>
 <script type=”text/javascript” src=”bootstrap/js/bootstrap.min.js”></script>
-<title>Insert title here</title>
+<title>Clinica-Login Amministratore</title>
 </head>
 <body>
 	<f:view>
@@ -52,14 +52,14 @@
 					<h:inputText value="#{amministratoreController.username}"
 						required="true" requiredMessage="Username obbligatorio"
 						id="username" />
-					<h:message for="username" styleClass="error" />
+					<div><h:message for="username" /></div>
 				</div>
 				<div>
 					<strong>Password: </strong>
 					<h:inputSecret value="#{amministratoreController.password}"
 						required="true" requiredMessage="Password obbligatoria"
 						id="password" />
-					<h:message for="password" styleClass="error" />
+					<div><h:message for="password" /></div>
 				</div>
 				<div>
 					<c:if test='${amministratoreController.errore != null}'>

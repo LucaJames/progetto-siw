@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Clinica-Home Amministratore</title>
+<title>Clinica-Amministratore</title>
 </head>
 <body>
 	<f:view>

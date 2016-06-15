@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Clinic-Inserisci Prerequisito</title>
+<title>Clinica-Inserisci Prerequisito</title>
 </head>
 <body>
 	<f:view>
@@ -57,14 +57,14 @@
 					<h:inputText value="#{prerequisitoController.nome}"
 						required="true" requiredMessage="Nome prerequisito obbligatorio" 
 						id="nome" />
-					<strong><h:message for="nome" /></strong>
+					<div><h:message for="nome" /></div>
 				</div>
 				<div>
 					<strong>Valore: </strong>
 					<h:inputText value="#{prerequisitoController.valore}" 
 						required="true" requiredMessage="Valore prerequisito obbligatorio" 
 						id="valore" />
-					<strong><h:message for="valore" /></strong>
+					<div><h:message for="valore" /></div>
 				</div>
 				<h:commandButton value="Aggiungi"
 					action="#{prerequisitoController.createPrerequisito}" />

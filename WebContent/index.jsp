@@ -64,14 +64,14 @@
 						<p class="col-sm-3"><strong>Username:</strong></p>
 						<h:inputText id="username" value="#{pazienteController.username}"
 							required="true" requiredMessage="Username Obbligatorio" />
-						<h:message for="username" styleClass="error" />
+						<h:message for="username" />
 					</div>
 					<div class="row">
 						<p class="col-sm-3"><strong>Password:</strong></p>
 						<h:inputSecret id="password"
 							value="#{pazienteController.password}" required="true"
 							requiredMessage="Password Obbligatoria" />
-						<h:message for="password" styleClass="error" />
+						<h:message for="password" />
 					</div>
 					<div>
 						<c:if test='${pazienteController.errore != null}'>

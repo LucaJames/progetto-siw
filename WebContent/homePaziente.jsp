@@ -19,8 +19,7 @@
 		<div id="header">
 			<div class="jumbotron">
 				<h1 id="title">Best Clinic</h1>
-				<p id="title">Clinica
-					specializzata</p>
+				<p id="title">Clinica specializzata</p>
 				<img id="im_d"
 					src="https://lh3.googleusercontent.com/-OvCyHpPzpow/AAAAAAAAAAI/AAAAAAAAABc/CyOcjcfDw44/photo.jpg"
 					alt="testo"

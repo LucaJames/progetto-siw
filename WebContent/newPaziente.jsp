@@ -12,7 +12,7 @@
 	<%@ include file="bootstrap/css/bootstrap-theme.css" %>
 	<%@ include file="styleSheets/style.css" %>
 </style>
-<title>Clinic-Nuovo Paziente</title>
+<title>Clinica-Nuovo Paziente</title>
 </head>
 <body>
 	<f:view>
@@ -50,26 +50,26 @@
 					<strong>Name: </strong>
 					<h:inputText value="#{pazienteController.nome}" required="true"
 						requiredMessage="Nome Obbligatorio" id="nome" />
-					<strong><h:message for="nome" /></strong>
+					<div><h:message for="nome" /></div>
 				</div>
 				<div>
 					<strong>Cognome: </strong>
 					<h:inputText value="#{pazienteController.cognome}" required="true"
 						requiredMessage="Cognome Obbligatorio" id="cognome" />
-					<strong><h:message for="cognome" /></strong>
+					<div><h:message for="cognome" /></div>
 				</div>
 				<div>
 					<strong>Username: </strong>
 					<h:inputText value="#{pazienteController.username}" required="true"
 						requiredMessage="Username Obbligatorio" id="username" />
-					<strong><h:message for="username" /></strong>
+					<div><h:message for="username" /></div>
 				</div>
 				<div>
 					<strong>Password: </strong>
 					<h:inputSecret value="#{pazienteController.password}"
 						required="true" requiredMessage="Password Obbligatoria"
 						id="password" />
-					<strong><h:message for="password" /></strong>
+					<div><h:message for="password" /></div>
 				</div>
 				<h:commandButton value="Invia"
 					action="#{pazienteController.createPaziente}" />
