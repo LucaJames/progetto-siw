@@ -28,10 +28,10 @@ public class TipologiaEsame {
 	@Column(nullable = false)
 	private Float price;
 	@OneToMany
-	@JoinColumn(name = "prequerisiti_tipologia")
+	@JoinColumn(name = "tipologia")
 	private List<Prerequisito> prerequisiti;
 	@OneToMany
-	@JoinColumn(name = "risultati_tipologia")
+	@JoinColumn(name = "tipologia")
 	private List<Risultato> risultati;
 	
 	public TipologiaEsame(){}

@@ -30,7 +30,7 @@ public class TipologiaEsameController {
 
 	@EJB
 	private TipologiaEsameFacade tipologiaEsameFacade;
-	
+
 	@PostConstruct
 	public void init(){
 		this.tipologie = tipologiaEsameFacade.getAllTipologieEsami();
@@ -61,6 +61,13 @@ public class TipologiaEsameController {
 		return "prerequisitiTipologia";
 	}
 
+	public TipologiaEsameFacade getTipologiaEsameFacade() {
+		return tipologiaEsameFacade;
+	}
+
+	public void setTipologiaEsameFacade(TipologiaEsameFacade tipologiaEsameFacade) {
+		this.tipologiaEsameFacade = tipologiaEsameFacade;
+	}
 
 	public Long getId() {
 		return id;

@@ -68,7 +68,7 @@ public class TipologiaEsameFacade {
 	}
 
 	public List<Prerequisito> listPrerequisiti(Long id) {
-		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM prerequisito p WHERE p.prequerisiti_tipologia = :tip", Prerequisito.class);
+		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM prerequisito p WHERE p.tipologia = :tip", Prerequisito.class);
 		q.setParameter("tip", id);
 		List<Prerequisito> listPrerequisiti = q.getResultList();
 		return listPrerequisiti;
