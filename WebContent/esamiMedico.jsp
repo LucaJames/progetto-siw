@@ -49,25 +49,26 @@
 		</div>
 
 		<div id="corpo">
-			<h2>${medicoController.nome}${medicoController.cognome}</h2>
+			<h2>${medicoController.nome} ${medicoController.cognome}</h2>
 			<h3>Lista esame</h3>
 			<table>
-				<tr>
-					<td><strong>Tipologia</strong></td>
-					<td><strong>Paziente</strong></td>
-					<td><strong>Data Prenotazione</strong></td>
-					<td><strong>Data Svolgimento</strong></td>
-				</tr>
-				<c:forEach var="esame" items="#{medicoController.esami}">
-					<tr>
-						<td><c:out value="${esame.tipologia.nome}" /></td>
-						<td><c:out
-								value="${esame.paziente.nome} ${esame.paziente.cognome}" /></td>
-						<td><c:out value="${esame.dataPrenotazione}" /></td>
-						<td><c:out value="${esame.dataSvolgimento}" /></td>
-					</tr>
-				</c:forEach>
-
+				<thead><tr>
+					<td>Tipologia</td>
+					<td>Paziente</td>
+					<td>Data Prenotazione</td>
+					<td>Data Svolgimento</td>
+				</tr></thead>
+				<tbody>
+					<c:forEach var="esame" items="#{medicoController.esami}">
+						<tr>
+							<td><c:out value="${esame.tipologia.nome}" /></td>
+							<td><c:out
+									value="${esame.paziente.nome} ${esame.paziente.cognome}" /></td>
+							<td><c:out value="${esame.dataPrenotazione}" /></td>
+							<td><c:out value="${esame.dataSvolgimento}" /></td>
+						</tr>	
+					</c:forEach>
+				</tbody>
 			</table>
 		</div>
 	</f:view>
