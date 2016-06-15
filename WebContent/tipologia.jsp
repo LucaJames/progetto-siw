@@ -54,11 +54,7 @@
 			<div><strong>Prezzo: </strong>${tipologiaEsameController.tipologia.price}</div>
 			<div><strong>Descrizione: </strong></div>
 			<div>${tipologiaEsameController.tipologia.descrizione}</div>
-			<h:form>
-				<h:commandLink 
-					value="Prerequisiti" 
-					action="#{tipologiaEsameController.listPrerequisiti}"/>
-			</h:form>
+			
 			<hr/>
 			<h:form>
 				<h:commandLink

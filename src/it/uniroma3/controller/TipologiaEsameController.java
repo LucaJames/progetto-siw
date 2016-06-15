@@ -55,7 +55,7 @@ public class TipologiaEsameController {
 	}
 	
 	public String listPrerequisiti() {
-		prerequisiti = tipologiaEsameFacade.listPrerequisiti(id);
+		prerequisiti = tipologiaEsameFacade.listPrerequisiti(tipologia);
 		if(prerequisiti.size()==0)
 			noPrerequisiti = "Non sono previsti prerequisiti per questo tipo di esame";
 		return "prerequisitiTipologia";

@@ -54,10 +54,9 @@ public class TipologiaEsameFacade {
 		deleteTipologiaEsame(tipEsame);
 	}
 
-	public List<Prerequisito> listPrerequisiti(Long id) {
-		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM Prerequisito p WHERE p.tipologia_id = :tip", Prerequisito.class);
-		q.setParameter("tip", id);
-		List<Prerequisito> listPrerequisiti = q.getResultList();
-		return listPrerequisiti;
+	public List<Prerequisito> listPrerequisiti(TipologiaEsame tipologia) {
+		TypedQuery<Prerequisito> q = em.createQuery("SELECT p FROM Prerequisito p JOIN p.tipologia_id t WHERE t = :tip", Prerequisito.class);
+		q.setParameter("tip", tipologia);
+		return q.getResultList();
 	}
 }
