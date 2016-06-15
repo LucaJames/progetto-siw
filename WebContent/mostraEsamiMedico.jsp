@@ -14,29 +14,23 @@
 <body>
 	<f:view>
 		<h:form>
-								<strong class="">Inserisci dati medico</strong>
-
+			<strong class="">Inserisci dati medico</strong>
 			
-<div>
-									Nome
-									<div>
-										<h:inputText value="#{medicoController.id}" required="true"
-											requiredMessage="Id is mandatory" id="id"
-											styleClass="form-control" />
-										<h:message for="id" />
-									</div>
-	</div>
-								
-								
-							
-									<div>
-										<h:commandLink
-											action="#{medicoController.findEsamiMedicoByID}"
-											value="Mostra Esami Medico"/>
-										<button type="reset" class="btn btn-default btn-sm">Reset</button>
-									</div>
-		
+			<div>
+				Nome
+				<div>
+					<h:inputText value="#{medicoController.id}" required="true"
+						requiredMessage="Id is mandatory" id="id"
+						styleClass="form-control" />
+					<h:message for="id" />
+				</div>
+			</div>
 
+			<div>
+				<h:commandLink action="#{medicoController.findEsamiMedicoByID}"
+					value="Mostra Esami Medico" />
+				<button type="reset" class="btn btn-default btn-sm">Reset</button>
+			</div>
 		</h:form>
 	</f:view>
 </body>
